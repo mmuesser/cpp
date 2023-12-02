@@ -2,8 +2,8 @@ NAME	=	PhoneBook
 CC		=	c++
 FLAG	=	-Wall -Wextra -Werror -std=c++98 -g3
 
-SRC_DIR	=    src/
-OBJ_DIR	=    obj/
+SRC_DIR	=	src/
+OBJ_DIR	=	obj/
 
 #Source
 FILES	=	main Contact PhoneBook
@@ -27,7 +27,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CC) $(FLAG) $(OBJS) $(INCLUDE) -o $(NAME)
 	@echo "$(GREEN)Compiled!$(DEF_COLOR)"
-	@echo "Launch the program with $(RED)./${NAME} $(DEF_COLOR)<port> <password>"
+	@echo "Launch the program with $(RED)./${NAME}"
 
 $(OBJ_DIR)%.o : %.cpp $(HEADER) Makefile | $(OBJF)
 	$(CC) $(FLAG) $(INCLUDE) -c $< -o $@

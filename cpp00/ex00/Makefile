@@ -8,7 +8,7 @@ OBJ_DIR    =    obj/
 # HEADER    =    
 
 # Source
-FILES    =    megaphone
+FILES    =    main
 
 SRCS    =    $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES)))
 OBJS    =    $(addprefix $(OBJ_DIR), $(addsuffix .o, $(FILES)))
@@ -23,7 +23,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CC) $(FLAG) $(OBJS) -o $(NAME)
 	@echo "$(GREEN)Compiled!$(DEF_COLOR)"
-	@echo "Launch the program with $(RED)./${NAME} $(DEF_COLOR)"
+	@echo "Launch the program with $(RED)./${NAME} $(DEF_COLOR) <string>"
 
 $(OBJ_DIR)%.o : %.cpp Makefile | $(OBJF)
 	$(CC) $(FLAG) -c $< -o $@

@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 17:35:52 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/01 17:57:41 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/02 16:59:59 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ class	PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 
-		void	ADD(int i);
-		void	SEARCH();
+		void	add(int i);
+		void	search();
+		void	display(int i);
 
 	private:
 		Contact	rep[8];

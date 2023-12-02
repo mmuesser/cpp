@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 16:01:57 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/01 18:22:19 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:24:06 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define CONTACT_H
 
 #include <iostream>
+#include <iomanip>
+#include <string>
+#include <sstream>
 
 class	Contact
 {
