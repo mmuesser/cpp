@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 17:29:56 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/02 18:11:41 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/03 18:08:08 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@ PhoneBook::PhoneBook(void){
 }
 
 PhoneBook::~PhoneBook(void){
-}
-
-Contact::Contact(void){
-}
-
-Contact::~Contact(void){
 }
 
 void	PhoneBook::add(int i)
@@ -59,8 +53,6 @@ void	PhoneBook::add(int i)
 	rep[i].setSecret(str);
 	std::cout << "-------------------------"<<std::endl;
 }
-
-#include <string>
 
 void	PhoneBook::search()
 {
