@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 15:53:08 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/04 19:14:24 by mmuesser         ###   ########.fr       */
+/*   Created: 2023/12/04 16:31:59 by mmuesser          #+#    #+#             */
+/*   Updated: 2023/12/04 16:48:53 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-int	main()
+#include <iostream>
+
+class	Weapon
 {
-	PhoneBook my_phone;
-	std::string	command;
-	int	i;
+	public :
+		Weapon(std::string type);
+		~Weapon(void);
+		
+		std::string	getType(void) const;
+		void		setType(std::string new_type);
 
-	i = 0;
-	while (command != "EXIT")
-	{
-		std::cout<< "Enter command : ";
-		std::getline(std::cin, command);
-		// if (!command.empty())
-		// 	return (0);`
-		if (command == "ADD")
-		{
-			my_phone.add(i % 8);
-			i++;
-		}
-		if (command == "SEARCH")
-			my_phone.search();
-	}
-	return (0);
-}
+	private :
+		std::string	type;
+};
+
+#endif

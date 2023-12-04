@@ -1,4 +1,4 @@
-NAME	=	PhoneBook
+NAME	=	weapon
 CC		=	c++
 FLAG	=	-Wall -Wextra -Werror -std=c++98 -g3
 
@@ -6,12 +6,12 @@ SRC_DIR	=	src/
 OBJ_DIR	=	obj/
 
 #Source
-FILES	=	main Contact PhoneBook
+FILES	=	main HumanA HumanB Weapon
 SRCS	=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES)))
 OBJS	=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(FILES)))
 
 INCLUDE	=	-I ./src/class -I ./include
-HNAME	=	Contact PhoneBook
+HNAME	=	HumanA HumanB Weapon
 HEADER	=	$(addsuffix .hpp, $(HNAME))
 
 OBJF	=	.cache_exits

@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 15:53:08 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/04 19:14:24 by mmuesser         ###   ########.fr       */
+/*   Created: 2023/12/04 16:38:41 by mmuesser          #+#    #+#             */
+/*   Updated: 2023/12/04 18:04:33 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef HUMANA_HPP
+#define	HUMANA_HPP
 
-int	main()
+#include "Weapon.hpp"
+
+class	HumanA
 {
-	PhoneBook my_phone;
-	std::string	command;
-	int	i;
+	public :
+		HumanA(std::string name, Weapon &weapon);
+		~HumanA(void);
+		
+		void		setWeapon(Weapon &h_weapon);
+		std::string	getWeapon(void) const;
+		void		setName(std::string h_name);
+		std::string	getName(void) const;
 
-	i = 0;
-	while (command != "EXIT")
-	{
-		std::cout<< "Enter command : ";
-		std::getline(std::cin, command);
-		// if (!command.empty())
-		// 	return (0);`
-		if (command == "ADD")
-		{
-			my_phone.add(i % 8);
-			i++;
-		}
-		if (command == "SEARCH")
-			my_phone.search();
-	}
-	return (0);
-}
+		void	attack(void);
+
+	private :
+		Weapon	&weapon;
+		std::string	name;
+};
+
+#endif

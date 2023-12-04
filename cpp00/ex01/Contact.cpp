@@ -6,11 +6,11 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 16:03:43 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/03 18:22:45 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/04 16:15:41 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/Contact.hpp"
+#include "Contact.hpp"
 
 Contact::Contact(void){}
 Contact::~Contact(void){}
