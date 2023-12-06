@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 17:26:55 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/06 19:00:31 by mmuesser         ###   ########.fr       */
+/*   Created: 2023/12/06 14:19:38 by mmuesser          #+#    #+#             */
+/*   Updated: 2023/12/06 18:47:42 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Zombie.hpp"
+#include "Harl.hpp"
 
-Zombie::Zombie(void){
-}
+int	main(int ac, char **av)
+{
+	Harl harl;
 
-Zombie::~Zombie(void){
-	std::cout<< "Destruction de " << name<<std::endl;
-}
-
-void	Zombie::setName(std::string z_name){ name = z_name;}
-std::string		Zombie::getName(void) const{ return(name);}
-
-void	Zombie::announce(void){
-	std::cout<< name <<": BraiiiiiiinnnzzzZ..."<<std::endl;
+	if (ac != 2){
+		std::cout<< "There is to many/not enough arguments."<<std::endl;
+		return (0);
+	}
+	harl.complain(av[1]);
+	return (0);
 }

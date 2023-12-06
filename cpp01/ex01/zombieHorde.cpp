@@ -6,13 +6,11 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 18:57:57 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/04 16:10:56 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/06 19:00:59 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/Zombie.hpp"
-
-/*ESSAYER DE FAIRE L'ALLOCATION EN DONNANT NAME AU CONSTRUCTEUR*/
 
 Zombie	*zombieHorde(int N, std::string name)
 {

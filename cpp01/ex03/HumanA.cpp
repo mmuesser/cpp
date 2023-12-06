@@ -6,13 +6,11 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:46:45 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/04 18:14:29 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/06 19:01:04 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
-
-/*utiliser reference parce que possede toujours une arme donc peut pas etre NULL*/
 
 HumanA::HumanA(std::string name, Weapon &weapon) : weapon(weapon), name(name) {
 	std::cout<< "Creation de " << getName()<<std::endl;

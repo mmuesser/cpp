@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 17:01:28 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/04 18:25:41 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:53:43 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int main(void)
 		club.setType("some other type of club");
 		bob.attack();
 	}
-	std::cout<< "-------------------------------------"<<std::endl;
+	std::cout<<std::endl;
 	{
-		Weapon club = Weapon("lucie");
+		Weapon club = Weapon("crude spiked club");
 		HumanB jim("Jim");
 		jim.setWeapon(club);
 		jim.attack();
-		club.setType("pas lucie");
+		club.setType("some other type of club");
 		jim.attack();
 	}
 	return (0);

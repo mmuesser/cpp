@@ -1,32 +1,37 @@
-NAME    =    megaphone
+NAME	=	Megaphone
+CC		=	c++
+FLAG	=	-Wall -Wextra -Werror -std=c++98 -g3
 
-CC        =    c++
-FLAG    =    -Wall -Wextra -Werror -std=c++98 -g3
+SRC_DIR	=	src/
+OBJ_DIR	=	obj/
 
-SRC_DIR    =    
-OBJ_DIR    =    obj/
-# HEADER    =    
+#Source
+FILES	=	main
+SRCS	=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES)))
+OBJS	=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(FILES)))
 
-# Source
-FILES    =    main
+INCLUDE	=	-I ./src/class -I ./include
+HNAME	=
+HEADER	=	$(addsuffix .hpp, $(HNAME))
 
-SRCS    =    $(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES)))
-OBJS    =    $(addprefix $(OBJ_DIR), $(addsuffix .o, $(FILES)))
-
-OBJF    =    .cache_exits
+OBJF	=	.cache_exits
 
 $(OBJF) :
 	@mkdir -p $(OBJ_DIR)
 
+vpath %.cpp 
+vpath %.hpp include/
+
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) $(FLAG) $(OBJS) -o $(NAME)
+	$(CC) $(FLAG) $(OBJS) $(INCLUDE) -o $(NAME)
 	@echo "$(GREEN)Compiled!$(DEF_COLOR)"
-	@echo "Launch the program with $(RED)./${NAME} $(DEF_COLOR) <string>"
+	@echo "Launch the program with $(RED)./${NAME} <string>"
 
-$(OBJ_DIR)%.o : %.cpp Makefile | $(OBJF)
-	$(CC) $(FLAG) -c $< -o $@
+$(OBJ_DIR)%.o : %.cpp $(HEADER) Makefile | $(OBJF)
+	$(CC) $(FLAG) $(INCLUDE) -c $< -o $@
+
 
 clean :
 	@rm -rf $(OBJ_DIR)
@@ -40,13 +45,6 @@ re : fclean all
 .PHONY : all clean fclean re
 
 # Color
-
-DEF_COLOR    = \033[0;39m
-GRAY         = \033[0;90m
-RED         = \033[0;91m
-GREEN         = \033[0;92m
-YELLOW         = \033[0;93m
-BLUE        = \033[0;94m
-MAGENTA        = \033[0;95m
-CYAN        = \033[0;96m
-WHITE        = \033[0;97m
+DEF_COLOR	= \033[0;39m
+RED			= \033[0;91m
+GREEN		= \033[0;92m

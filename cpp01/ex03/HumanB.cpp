@@ -6,15 +6,13 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:52:50 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/04 18:39:59 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/06 19:01:18 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-/*utiliser pointeur parce que ne possede pas toujours une arme donc peut etre NULL*/
-
-HumanB::HumanB(std::string name) /*: weapon(NULL), name(name)*/{
+HumanB::HumanB(std::string name){
 	setName(name);
 	std::cout<< "Creation de " << getName()<<std::endl;
 }

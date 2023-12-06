@@ -1,4 +1,4 @@
-NAME	=	replace
+NAME	=	HarlFilter
 CC		=	c++
 FLAG	=	-Wall -Wextra -Werror -std=c++98 -g3
 
@@ -6,7 +6,7 @@ SRC_DIR	=	src/
 OBJ_DIR	=	obj/
 
 #Source
-FILES	=	main
+FILES	=	main Harl
 SRCS	=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES)))
 OBJS	=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(FILES)))
 
@@ -27,7 +27,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CC) $(FLAG) $(OBJS) $(INCLUDE) -o $(NAME)
 	@echo "$(GREEN)Compiled!$(DEF_COLOR)"
-	@echo "Launch the program with $(RED)./${NAME} <file> <s1> <s2>"
+	@echo "Launch the program with $(RED)./${NAME} <debug/info/warning/error>"
 
 $(OBJ_DIR)%.o : %.cpp $(HEADER) Makefile | $(OBJF)
 	$(CC) $(FLAG) $(INCLUDE) -c $< -o $@
