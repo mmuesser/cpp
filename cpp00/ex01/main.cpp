@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 15:53:08 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/04 19:14:24 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:35:38 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	main()
 	{
 		std::cout<< "Enter command : ";
 		std::getline(std::cin, command);
-		// if (!command.empty())
-		// 	return (0);`
 		if (command == "ADD")
 		{
 			my_phone.add(i % 8);

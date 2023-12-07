@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:38:41 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/04 18:04:33 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/07 18:47:08 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	HumanA
 		~HumanA(void);
 		
 		void		setWeapon(Weapon &h_weapon);
-		std::string	getWeapon(void) const;
+		Weapon		&getWeapon(void) const;
 		void		setName(std::string h_name);
 		std::string	getName(void) const;
 
