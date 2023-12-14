@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:19:42 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/14 16:51:21 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/14 19:25:17 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,21 @@ class Fixed
 		~Fixed(void);
 
 		Fixed&	operator=(const Fixed &obj);
+		bool	operator>(const Fixed &obj) const;
+		bool	operator<(const Fixed &obj) const;
+		bool	operator>=(const Fixed &obj) const;
+		bool	operator<=(const Fixed &obj) const;
+		bool	operator==(const Fixed &obj) const;
+		bool	operator!=(const Fixed &obj) const;
+		Fixed	operator+(const Fixed &obj) const;
+		Fixed	operator-(const Fixed &obj) const;
+		Fixed	operator*(const Fixed &obj) const;
+		Fixed	operator/(const Fixed &obj) const;
+		Fixed&	operator++();
+		Fixed	operator++(int);
+		Fixed&	operator--();
+		Fixed	operator--(int);
+
 
 		float 	toFloat(void) const;
 		int 	toInt(void) const;
@@ -39,6 +54,6 @@ class Fixed
 	
 };
 
-std::ostream& operator<<(std::ostream &ost, const Fixed &obj);
+std::ostream &operator<<(std::ostream &ost, const Fixed &obj);
 
 #endif

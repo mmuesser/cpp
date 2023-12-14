@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:19:32 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/08 18:24:33 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/14 16:51:21 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,26 @@ Fixed::Fixed(void){
 
 Fixed::Fixed(const Fixed &obj){
 	std::cout<<"Copy constructor called"<<std::endl;
-	_nb = obj.getRawBits();
+	*this = obj;
 }
 
-Fixed&	Fixed::operator=(Fixed& other){
-	std::cout<< "Fixed::operator=(Fixed&) called"<<std::endl;
-	this->_nb = other.getRawBits();
+Fixed&	Fixed::operator=(const Fixed& obj)
+{
+	std::cout<< "Fixed::operator=(const Fixed &obj) called"<<std::endl;
+	this->_nb = obj.getRawBits();
 	return (*this);
-};
+}
 
 Fixed::~Fixed(void){
 	std::cout<<"Destructor called"<<std::endl;
 }
 
-int		Fixed::getRawBits(void) const{
+int		Fixed::getRawBits(void) const
+{
 	std::cout<< "getRawBits member fonction called"<<std::endl;
-	return(_nb);}
+	return(_nb);
+}
+
 void	Fixed::setRawBits(int const raw){_nb = raw;}
 
 const int	Fixed::_bits = 8;
