@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 17:26:55 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/15 17:22:24 by mmuesser         ###   ########.fr       */
+/*   Created: 2023/12/15 17:56:16 by mmuesser          #+#    #+#             */
+/*   Updated: 2023/12/15 19:50:04 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/Zombie.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-Zombie::Zombie(std::string name){
-	std::cout<< "Creation de " << name<<std::endl;
-}
-Zombie::~Zombie(void){
-	std::cout<< "Destruction de " << name<<std::endl;
-}
+#include <iostream>
 
-void	Zombie::setName(std::string z_name){ name = z_name;}
-std::string		Zombie::getName(void) const{ return(name);}
+class	ScavTrap: public ClapTrap
+{
+	public :
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &obj);
+		~ScavTrap(void);
 
-void	Zombie::announce(void){
-	std::cout<< name <<": BraiiiiiiinnnzzzZ..."<<std::endl;
-}
+		void guardGate();
+
+	private :
+		// std::string	_name;
+		// int			_hp;
+		// int			_ep;
+		// int			_atk;
+
+};
+
+#endif

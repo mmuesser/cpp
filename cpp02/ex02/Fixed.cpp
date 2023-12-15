@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:19:32 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/15 15:45:11 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:17:51 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,14 @@ Fixed	Fixed::operator*(const Fixed &obj) const
 Fixed	Fixed::operator/(const Fixed &obj) const
 {
 	Fixed tmp;
-	tmp._nb = (this->_nb / obj._nb) * (1 << this->_bits);
+
+	if (obj._nb == 0)
+	{
+		std::cout<< "Error : cannot divide by 0\n";
+		tmp._nb = 0;
+		return tmp;
+	}
+	tmp._nb = ((this->toFloat() / obj.toFloat())) * (1 << this->_bits);
 	return (tmp);
 }
 

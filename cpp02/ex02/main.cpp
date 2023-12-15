@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:19:39 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/15 15:55:33 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:17:39 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(void)
 	Fixed a;
 	Fixed const b(Fixed(5.05f) * Fixed(2));
 	Fixed c(Fixed(10) + Fixed(2));
-	Fixed d(Fixed(15) / Fixed(2.5f));
+	Fixed d(Fixed(16) / Fixed(2.5f));
 	std::cout<< "prefix incrementation : \n";
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
@@ -47,7 +47,7 @@ int main(void)
 	std::cout<< "\nsoustraction " << c << " - " << b << " : \n";
 	std::cout<< c - b <<std::endl;
 
-	std::cout<< "\ndivision  15 / 2.5 : \n";
+	std::cout<< "\ndivision  16 / 2.5 : \n";
 	std::cout<< d <<std::endl;
 
 	std::cout<<"\nmax " << a << " | " << d <<  " : \n";
