@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:34:50 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/15 19:25:31 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/15 23:20:46 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,21 @@
 int	main(void)
 {
 	ScavTrap toto("Toto");
-	ClapTrap tata("Tata");
-	ScavTrap titi("Titi");
-	ScavTrap toto_copy(toto);
+	ScavTrap tutu;
 
-	titi = toto;
 	std::cout<<"\n";
 
-	std::cout<< "toto ep before attack: " << toto.getEp() <<std::endl;
-	std::cout<< "tata hp before take damage : " << tata.getHp() << "\n"<<std::endl;
-	toto.attack(tata.getName());
-	tata.takeDamage(toto.getAtk());
-	std::cout<< "\ntoto ep after attack: " << toto.getEp() <<std::endl;
-	std::cout<< "tata hp after take damage : " << tata.getHp() <<std::endl;
+	std::cout<< toto.getName() << " ep before attack: " << toto.getEp() <<std::endl;
+	std::cout<< tutu.getName() << " hp before take damage : " << tutu.getHp() << "\n"<<std::endl;
+	toto.attack(tutu.getName());
+	tutu.takeDamage(toto.getAtk());
+	std::cout<< "\n" << toto.getName() << " ep after attack: " << toto.getEp() <<std::endl;
+	std::cout<< "\n" << tutu.getName() << " hp after take damage : " << tutu.getHp() <<std::endl;
+	tutu.guardGate();
 
 	std::cout<<"\n\n";
 	
-	std::cout<< "tata ep before repair : " << tata.getEp() << "\n"<<std::endl;
-	tata.beRepaired(14);
-	std::cout<< "\ntata ep after repair : " << tata.getEp() <<std::endl;
-	std::cout<< "tata hp after repair of 3: " << tata.getHp() << "\n"<<std::endl;
+	
 
 	return (0);
 }

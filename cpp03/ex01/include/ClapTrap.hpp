@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:35:31 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/15 19:06:58 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/15 23:17:27 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class	ClapTrap
 {
 	public :
+		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &obj);
 		~ClapTrap(void);
