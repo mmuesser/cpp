@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:19:42 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/14 19:25:17 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/15 15:30:15 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ class Fixed
 		Fixed	operator++(int);
 		Fixed&	operator--();
 		Fixed	operator--(int);
+		static Fixed&	min(Fixed& obj1, Fixed& obj2);
+		static Fixed&	max(Fixed& obj1, Fixed& obj2);
+		static Fixed const &	min(const Fixed& obj1, const Fixed& obj2);
+		static Fixed const &	max(const Fixed& obj1, const Fixed& obj2);
 
 
 		float 	toFloat(void) const;
