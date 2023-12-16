@@ -6,35 +6,38 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:34:50 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/16 16:19:22 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/16 16:40:56 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int	main(void)
 {
-	ClapTrap toto("Toto");
-	ClapTrap tata("Tata");
-	ClapTrap titi("Titi");
-	ClapTrap toto_copy(toto);
+	FragTrap toto("Toto");
+	FragTrap tata("Tata");
+	FragTrap titi("Titi");
+	FragTrap toto_copy(toto);
 
 	titi = toto;
 	std::cout<<"\n";
 	std::cout<< "titi name : " << titi.getName() <<std::endl;
-	std::cout<< "\ntoto ep before attack : " << toto.getEp() <<std::endl;
-	std::cout<< "tata hp before take damage : " << tata.getHp() << "\n"<<std::endl;
+	std::cout<< "\n" << toto.getName() << " ep before attack : " << toto.getEp() <<std::endl;
+	std::cout<< tata.getName() << " hp before take damage : " << tata.getHp() << "\n"<<std::endl;
 	toto.attack(tata.getName());
-	tata.takeDamage(5);
-	std::cout<< "\ntoto ep after attack: " << toto.getEp() <<std::endl;
-	std::cout<< "tata hp after take damage : " << tata.getHp() <<std::endl;
+	tata.takeDamage(toto.getAtk());
+	std::cout<< "\n" << toto.getName() << " ep after attack: " << toto.getEp() <<std::endl;
+	std::cout<< tata.getName() << " hp after take damage : " << tata.getHp() <<std::endl;
 
 	std::cout<<"\n\n";
 	
-	std::cout<< "tata ep before repair : " << tata.getEp() << "\n"<<std::endl;
+	std::cout<< tata.getName() << " ep before repair : " << tata.getEp() << "\n"<<std::endl;
 	tata.beRepaired(3);
-	std::cout<< "\ntata ep after repair : " << tata.getEp() <<std::endl;
-	std::cout<< "tata hp after repair : " << tata.getHp() << "\n"<<std::endl;
-
+	std::cout<< "\n" << tata.getName() << " ep after repair : " << tata.getEp() <<std::endl;
+	std::cout<< tata.getName() << " hp after repair : " << tata.getHp() << "\n"<<std::endl;
+	toto.highFivesGuys();
+	std::cout<<"\n";
 	return (0);
 }

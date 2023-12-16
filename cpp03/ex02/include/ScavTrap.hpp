@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:56:16 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/16 14:28:17 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/16 14:22:59 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define SCAVTRAP_HPP
 
 #include <iostream>
+#include <sstream>
+#include <string>
+#include "ClapTrap.hpp"
 
 class	ScavTrap: public ClapTrap
 {
@@ -25,11 +28,10 @@ class	ScavTrap: public ClapTrap
 
 		ScavTrap&	operator=(const ScavTrap &obj);
 
-		void	attack(std::string name);
+		void	attack(const std::string& target);
 		void 	guardGate();
 
 	private :
-		
 
 };
 

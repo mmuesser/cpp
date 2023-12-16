@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:54:20 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/16 16:25:08 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/16 14:29:56 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 {
-	std::cout<< "ScavTrap " << this->_name << " copy is created"<<std::endl;
 	*this = obj;
 	this->_ep = 50;
 	this->_atk = 20;
+	std::cout<< "ScavTrap " << this->_name << " copy is created"<<std::endl;
 }
 
 ScavTrap::~ScavTrap(void)
@@ -49,7 +49,7 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap &obj)
 	return (*this);
 }
 
-void	ScavTrap::attack(std::string target)
+void	ScavTrap::attack(const std::string& target)
 {
 	if (this->getEp() > 0 && this->getHp() > 0)
 	{

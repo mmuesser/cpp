@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:36:02 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/16 16:21:00 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/15 23:18:47 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@ ClapTrap::ClapTrap(void) : _name("Default"), _hp(100), _ep(10), _atk(0)
 	std::cout<< "ClapTrap " << this->_name << " is created"<<std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hp(100), _ep(10), _atk(0)
 {
-	this->_name = name;
-	this->_hp = 10;
-	this->_ep = 10;
-	this->_atk = 0;
 	std::cout<< "ClapTrap " << this->_name << " is created"<<std::endl;
 }
 
@@ -69,7 +65,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->getEp() > 0 && this->getHp() > 0)
 	{
-		std::cout<< "ClapTrap " << this->_name << " repair " << amount << " hp"<<std::endl;
+		std::cout<< "ClapTrap " << this->_name << " repair " << amount << " of hp"<<std::endl;
 		this->setHp(this->getHp() + amount);
 		this->setEp(this->getEp() - 1);
 	}
@@ -77,6 +73,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout<< "ClapTrap " << this->_name << " ep or hp is not suffisant" <<std::endl;
 }
 
+/*=============================================================*/
 
 std::string	ClapTrap::getName(void) const
 {
