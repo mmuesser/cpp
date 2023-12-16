@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:36:02 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/16 16:21:00 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/16 17:58:56 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,10 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	std::cout<< "ClapTrap " << this->_name << " loose " << amount << " hp"<<std::endl;
 	this->setHp(this->getHp() - amount);
 	if (this->getHp() < 0)
+	{
+		std::cout<< "ClapTrap " << this->_name << " is dead"<<std::endl;
 		this->setHp(0);
+	}
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)

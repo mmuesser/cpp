@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:52:41 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/16 16:40:49 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/16 17:55:32 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void 	FragTrap::highFivesGuys(void)
 	do {
 		std::cout<< "Give him one (*CLAP*)"<<std::endl;
 		getline(std::cin, str);
+		if (std::cin.eof())
+            return ;
 	} while (str.empty() || str != "*CLAP*");
 	std::cout<< "YEAHHH !"<<std::endl;
 }
