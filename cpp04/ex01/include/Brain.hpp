@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 16:19:39 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/17 15:28:06 by mmuesser         ###   ########.fr       */
+/*   Created: 2023/12/17 19:35:03 by mmuesser          #+#    #+#             */
+/*   Updated: 2023/12/17 19:38:06 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-int main( void )
+#include <iostream>
+
+class	Brain
 {
-	Fixed a;
-	Fixed b(a);
-	Fixed c;
+	public :
+		Brain(void);
+		Brain(const Brain &obj);
+		~Brain(void);
 
-	c = b;
-	
-	std::cout<<"\n";
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	std::cout<<"\n";
-	return (0);
-}
+		Brain&	operator=(const Brain &obj);
+
+		std::string	getIdeas(void) const;
+		void		setIdeas(std::string idea);
+
+	private :
+		std::string	*_ideas;
+};
+
+#endif

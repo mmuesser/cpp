@@ -6,14 +6,14 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:19:32 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/14 16:51:21 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/17 15:28:44 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 Fixed::Fixed(void){
-	std::cout<<"Constructor called"<<std::endl;
+	std::cout<<"Default constructor called"<<std::endl;
 	_nb = 0;
 }
 
@@ -24,8 +24,8 @@ Fixed::Fixed(const Fixed &obj){
 
 Fixed&	Fixed::operator=(const Fixed& obj)
 {
-	std::cout<< "Fixed::operator=(const Fixed &obj) called"<<std::endl;
-	this->_nb = obj.getRawBits();
+	std::cout<< "\nFixed operator = called"<<std::endl;
+	this->_nb = obj._nb;
 	return (*this);
 }
 

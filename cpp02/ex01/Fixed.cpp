@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:19:32 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/14 17:43:28 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/17 16:28:40 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ Fixed::Fixed(const float f_nb)
 {
 	std::cout<< "Float constructor called"<<std::endl;
 	this->_nb  = (int)roundf(f_nb * (1 << this->_bits));
-	std::cout << this->_nb <<std::endl;
 }
 
 Fixed::~Fixed(void){
@@ -55,8 +54,8 @@ int Fixed::toInt( void ) const
 
 Fixed&	Fixed::operator=(const Fixed &obj)
 {
-	std::cout<< "Fixed::operator=(const Fixed &obj) called"<<std::endl;
-	this->_nb = obj.getRawBits();
+	std::cout<< "Fixed operator = called"<<std::endl;
+	this->_nb = obj._nb;
 	return (*this);
 }
 
