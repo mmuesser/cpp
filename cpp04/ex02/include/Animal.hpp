@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:23:26 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/21 16:57:47 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:33:43 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ class	Animal
 
 		Animal&	operator=(const Animal &obj);
 
-		virtual void	makeSound(void) const;
+		virtual void	makeSound(void) const = 0;
 		void			learning(std::string idea, int i);
 		void			thinking(int i);
 
-		virtual Brain*	getBrain(void) const;
+		virtual Brain*	getBrain(void) const = 0;
 		std::string		getType(void) const;
 		void			setType(std::string str);
 

@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:26:11 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/21 17:03:57 by mmuesser         ###   ########.fr       */
+/*   Updated: 2023/12/21 17:29:29 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ Animal&	Animal::operator=(const Animal& obj)
 	return (*this);
 }
 
-void	Animal::makeSound(void) const
-{
-	std::cout<< "*some weird animal sound*"<<std::endl;
-}
+// void	Animal::makeSound(void) const
+// {
+// 	std::cout<< "*some weird animal sound*"<<std::endl;
+// }
 
 void	Animal::learning(std::string idea, int i)
 {
@@ -60,10 +60,10 @@ void	Animal::thinking(int i)
 	std::cout<< this->getBrain()->getIdeas(i)<<std::endl;
 }
 
-Brain*	Animal::getBrain(void) const
-{
-	return (NULL);
-}
+// Brain*	Animal::getBrain(void) const
+// {
+// 	return (NULL);
+// }
 
 std::string	Animal::getType(void) const {return (this->type);}
 void		Animal::setType(std::string str) {this->type = str;}

@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 19:35:03 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/21 16:12:28 by mmuesser         ###   ########.fr       */
+/*   Created: 2023/12/17 17:23:14 by mmuesser          #+#    #+#             */
+/*   Updated: 2023/12/17 19:04:40 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
 
-class	Brain
+class	WrongAnimal
 {
 	public :
-		Brain(void);
-		Brain(const Brain &obj);
-		~Brain(void);
+		WrongAnimal(void);
+		WrongAnimal(std::string str);
+		WrongAnimal(const WrongAnimal &obj);
+		virtual ~WrongAnimal(void);
 
-		Brain&	operator=(const Brain &obj);
+		WrongAnimal&	operator=(const WrongAnimal &obj);
 
-		std::string	getIdeas(int i) const;
-		void		setIdeas(std::string idea, int i);
+		void	makeSound(void) const;
 
-	private :
-		std::string	*_ideas;
+		std::string	getType(void) const;
+		void		setType(std::string str);
+
+	protected :
+		std::string type;
 };
 
 #endif
