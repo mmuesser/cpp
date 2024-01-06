@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 18:36:17 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/06 17:47:25 by mmuesser         ###   ########.fr       */
+/*   Created: 2024/01/06 17:13:04 by mmuesser          #+#    #+#             */
+/*   Updated: 2024/01/06 17:13:22 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Bureaucrat.hpp"
 
-#include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class	Cat : virtual public Animal
+int	main(void)
 {
-	public :
-		Cat(void);
-		Cat(std::string str);
-		Cat(const Cat &obj);
-		~Cat(void);
-
-		Cat&	operator=(const Cat& obj);
-
-		void	makeSound(void) const;
-
-		Brain*	getBrain(void) const;
-
-	private :
-		Brain	*brain;
-};
-
-#endif
+	
+}

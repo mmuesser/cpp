@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/16 18:36:17 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/06 17:47:25 by mmuesser         ###   ########.fr       */
+/*   Created: 2024/01/06 17:13:28 by mmuesser          #+#    #+#             */
+/*   Updated: 2024/01/06 17:25:50 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Bureaucrat.hpp"
 
-#include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class	Cat : virtual public Animal
+Bureaucrat::Bureaucrat()
 {
-	public :
-		Cat(void);
-		Cat(std::string str);
-		Cat(const Cat &obj);
-		~Cat(void);
+	std::cout<< "Bureaucrat default constructor called"<<std::endl;
+	this->_name = "NoName";
+	this->_grade = 150;
+}
 
-		Cat&	operator=(const Cat& obj);
-
-		void	makeSound(void) const;
-
-		Brain*	getBrain(void) const;
-
-	private :
-		Brain	*brain;
-};
-
-#endif
+Bureaucrat::Bureaucrat(const std::string name, int grade)
+{
+	std::cout<< "Bureaucrat constructor called"<<std::endl;
+	this->_name = name;
+	try
+	{
+		this->_grade = grade;
+	}
+	catch()
+}
