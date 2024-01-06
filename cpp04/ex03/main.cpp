@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 16:36:16 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/06 13:07:08 by mmuesser         ###   ########.fr       */
+/*   Created: 2024/01/06 13:31:15 by mmuesser          #+#    #+#             */
+/*   Updated: 2024/01/06 13:49:32 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
-
 #include "Materia.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+// #include "Character.hpp"
 
-class	Cure : virtual public AMateria
+int	main(void)
 {
-	public :
-		Cure(void);
-		Cure(const Cure &obj);
-		virtual ~Cure(void);
-
-		Cure&	operator=(cont Cure &obj);
-
-		virtual Cure*	clone();
-		void	cure_wounds();
-
-	private :
+	
+	return (1);
 }
-
-#endif

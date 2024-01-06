@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:21:45 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/02 16:32:34 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/06 13:09:53 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,9 @@ Ice*	Ice::clone()
 {
 	Ice *new_ice = new Ice();
 	return (new_ice);
+}
+
+void	Ice::shoot_ice(std::string name)
+{
+	std::cout<< "* shoots an ice bolt at " << name << " *"<<std::endl;
 }
