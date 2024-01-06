@@ -1,4 +1,4 @@
-NAME	=	Interface
+NAME	=	Bureaucrat
 CC		=	c++
 FLAG	=	-Wall -Wextra -Werror -std=c++98 -g3
 

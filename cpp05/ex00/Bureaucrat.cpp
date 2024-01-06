@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:28 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/06 17:25:50 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:17:30 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,19 @@ Bureaucrat::Bureaucrat(const std::string name, int grade)
 	this->_name = name;
 	try
 	{
+		if (grade > 150)
+			throw GradeTooLowException();
+		else if (grade < 1)
+			throw GradeTooHighException();
 		this->_grade = grade;
 	}
-	catch()
+	catch(std::exception const &e)
+	{
+		std::cerr<< "ERROR : " << e.what()<<std::endl;
+	}
+}
+
+Bureaucrat::~Bureaucrat(void)
+{
+	std::cout<< "Bureaucrat destructor called"<<std::endl;
 }

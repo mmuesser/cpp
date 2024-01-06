@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:04 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/06 17:13:22 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/06 18:23:25 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 int	main(void)
 {
+	Bureaucrat test("test", -1);
+	Bureaucrat test2("test2", 155);
 	
+	return (0);
 }
