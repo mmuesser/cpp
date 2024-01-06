@@ -6,12 +6,12 @@ SRC_DIR	=	src/
 OBJ_DIR	=	obj/
 
 #Source
-FILES	=	main Materia Ice Cure Character MaterialSource
+FILES	=	main AMateria Ice Cure Character MateriaSource
 SRCS	=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES)))
 OBJS	=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(FILES)))
 
 INCLUDE	=	-I ./src/class -I ./include
-HNAME	=	Materia Ice Cure Character MaterialSource
+HNAME	=	AMateria Ice Cure Character MateriaSource ICharacter IMateriaSource
 HEADER	=	$(addsuffix .hpp, $(HNAME))
 
 OBJF	=	.cache_exits

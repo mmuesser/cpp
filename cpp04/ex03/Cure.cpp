@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:40:48 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/06 13:10:38 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/06 16:28:42 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,17 @@ Cure::~Cure(void)
 
 Cure&	Cure::operator=(const Cure &obj)
 {
-	*this = obj;
+	(void) obj;
 	return (*this);
 }
 
-Cure*	Cure::clone()
+AMateria*	Cure::clone() const
 {
 	Cure *new_cure = new Cure();
 	return (new_cure);
 }
 
-void	Cure::cure_wounds(std::string name)
+void	Cure::use(ICharacter &target)
 {
-	std::cout<< "* heals " << name << "'s wounds *"<<std::endl;
+	std::cout<< "* heals " << target.getName() << "'s wounds *"<<std::endl;
 }

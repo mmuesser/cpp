@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 14:41:10 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/06 16:30:18 by mmuesser         ###   ########.fr       */
+/*   Created: 2024/01/06 15:14:35 by mmuesser          #+#    #+#             */
+/*   Updated: 2024/01/06 16:26:12 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-#define CHARACTER_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
 #include <iostream>
-#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
 
-class	Character : public ICharacter
+class	MateriaSource : public IMateriaSource
 {
 	public :
-		Character();
-		Character(std::string name);
-		Character(const Character &obj);
-		virtual ~Character(void);
+		MateriaSource();
+		MateriaSource(const MateriaSource &obj);
+		virtual ~MateriaSource(void);
 
-		Character&	operator=(const Character &obj);
+		MateriaSource&	operator=(const MateriaSource &obj);
 
-		std::string	const & getName() const;
-		void				equip(AMateria* m);
-		void				unequip(int idx);
-		void				use(int idx, ICharacter& target);
+		void		learnMateria(AMateria* m);
+		AMateria*	createMateria(std::string const & type);
 
 	private :
-		std::string	_name;
-		AMateria* 	_inventory[4];
+		AMateria*	_storage[4];
 };
 
 #endif

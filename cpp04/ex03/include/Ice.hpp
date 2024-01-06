@@ -6,14 +6,15 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:16:24 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/06 13:08:59 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/06 16:24:27 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP
 #define ICE_HPP
 
-#include "Materia.hpp"
+#include <iostream>
+#include "AMateria.hpp"
 
 class	Ice : virtual public AMateria
 {
@@ -24,10 +25,10 @@ class	Ice : virtual public AMateria
 
 		Ice&	operator=(const Ice &obj);
 
-		virtual Ice* clone(std::string name);
-		void	shoot_ice(std::string name);
+		AMateria*	clone() const;
+		void			use(ICharacter &target);
 
 	private :
-}
+};
 
 #endif

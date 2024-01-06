@@ -1,51 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Materia.cpp                                        :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 15:12:04 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/06 13:08:47 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/06 16:35:25 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Materia.hpp"
+#include "AMateria.hpp"
 
 AMateria::AMateria(void)
 {
-	std::cout<< "Materia default constructor called"<<std::endl;
+	std::cout<< "AMateria default constructor called"<<std::endl;
 }
 
 AMateria::AMateria(const AMateria &obj)
 {
-	std::cout<< "Materia copy constructor called"<<std::endl;
+	std::cout<< "AMateria copy constructor called"<<std::endl;
 	*this = obj;
 }
 
-// AMateria::AMateria(std::string const &type)
-// {
-
-// }
-
 AMateria::~AMateria(void)
 {
-	std::cout<< "Materia destructor called"<<std::endl;
+	std::cout<< "AMateria destructor called"<<std::endl;
 }
 
 AMateria&	AMateria::operator=(const AMateria &obj)
 {
-	*this = obj;
+	(void) obj;
 	return (*this);
 }
 
-std::string	const & getType() const
+std::string	const & AMateria::getType() const
 {
 	return (this->type);
 }
 
-void	use(ICharacter& target)
+void	AMateria::use(ICharacter& target)
 {
-	this->shoot_ice(target->getName());
-	this->cure_wounds(target->getName());
+	(void) target;
+	std::cout<< "But nothing happened..."<<std::endl;
 }

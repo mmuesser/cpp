@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:21:45 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/06 13:09:53 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/06 16:28:39 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,17 @@ Ice::~Ice(void)
 
 Ice&	Ice::operator=(const Ice &obj)
 {
-	*this = obj;
+	(void) obj;
 	return (*this);
 }
 
-Ice*	Ice::clone()
+AMateria*	Ice::clone() const
 {
 	Ice *new_ice = new Ice();
 	return (new_ice);
 }
 
-void	Ice::shoot_ice(std::string name)
+void	Ice::use(ICharacter &target)
 {
-	std::cout<< "* shoots an ice bolt at " << name << " *"<<std::endl;
+	std::cout<< "* shoots an ice bolt at " << target.getName() << " *"<<std::endl;
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Materia.hpp                                        :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 15:08:59 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/02 16:15:33 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/06 16:33:36 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define AMATERIA_HPP
 
 #include <iostream>
+#include "ICharacter.hpp"
 
 class AMateria
 {
@@ -23,8 +24,7 @@ class AMateria
 	public:
 		AMateria(void);
 		AMateria(const AMateria &obj);
-		AMateria(std::string const &type); //voir si je garde
-		~AMateria(void);
+		virtual ~AMateria(void);
 
 		AMateria&	operator=(const AMateria &obj);
 
