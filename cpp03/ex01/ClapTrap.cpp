@@ -6,18 +6,18 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:36:02 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/16 17:59:06 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/07 14:55:18 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("Default"), _hp(100), _ep(10), _atk(0)
+ClapTrap::ClapTrap(void) : _name("Default"), _hp(10), _ep(10), _atk(0)
 {
 	std::cout<< "ClapTrap " << this->_name << " is created"<<std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hp(100), _ep(10), _atk(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _atk(0)
 {
 	std::cout<< "ClapTrap " << this->_name << " is created"<<std::endl;
 }
@@ -49,15 +49,20 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout<< "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_atk << " points of damage"<<std::endl;
 		this->setEp(this->getEp() - 1);
 	}
-	else
+	else if (this->getEp() < 0)
 		std::cout<< "ClapTrap " << this->_name << " ep is not suffisant" <<std::endl;
+	else
+		std::cout<< "ClapTrap " << this->_name << " is dead" <<std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout<< "ClapTrap " << this->_name << " loose " << amount << " hp"<<std::endl;
-	this->setHp(this->getHp() - amount);
-	if (this->getHp() < 0)
+	if (this->getHp() > 0)
+	{
+		std::cout<< "ClapTrap " << this->_name << " loose " << amount << " hp"<<std::endl;
+		this->setHp(this->getHp() - amount);
+	}
+	if (this->getHp() <= 0)
 	{
 		std::cout<< "ClapTrap " << this->_name << " is dead"<<std::endl;
 		this->setHp(0);
@@ -72,8 +77,10 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		this->setHp(this->getHp() + amount);
 		this->setEp(this->getEp() - 1);
 	}
+	else if (this->getEp() < 0)
+		std::cout<< "ClapTrap " << this->_name << " ep is not suffisant" <<std::endl;
 	else
-		std::cout<< "ClapTrap " << this->_name << " ep or hp is not suffisant" <<std::endl;
+		std::cout<< "ClapTrap " << this->_name << " is dead" <<std::endl;
 }
 
 /*=============================================================*/

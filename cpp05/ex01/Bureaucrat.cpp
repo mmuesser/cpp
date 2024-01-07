@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:28 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 14:24:25 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/07 19:01:33 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,20 @@ Bureaucrat&	Bureaucrat::operator=(const Bureaucrat &obj)
 	if (this != &obj)
 		*this = obj;
 	return (*this);
+}
+
+void	Bureaucrat::signForm(Form &obj)
+{
+	try
+	{
+		obj.beSigned(*this);
+	}
+	catch (std::exception &e)
+	{
+		std::cout<< this->getName() << " couldn't signed " << obj.getName() << " because " << e.what() <<std::endl;
+		return ;
+	}
+	std::cout<< this->getName() << " signed " << obj.getName()<<std::endl;
 }
 
 void	Bureaucrat::upGrade(int nb)

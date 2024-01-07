@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:54:20 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/16 16:25:08 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/07 14:56:10 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	std::cout<< "ScavTrap " << this->_name << " is created"<<std::endl;
+	this->_hp = 100;
 	this->_ep = 50;
 	this->_atk = 20;
 }
@@ -23,6 +24,7 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout<< "ScavTrap " << this->_name << " is created"<<std::endl;
+	this->_hp = 100;
 	this->_ep = 50;
 	this->_atk = 20;
 }
@@ -31,6 +33,7 @@ ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 {
 	std::cout<< "ScavTrap " << this->_name << " copy is created"<<std::endl;
 	*this = obj;
+	this->_hp = 100;
 	this->_ep = 50;
 	this->_atk = 20;
 }
@@ -56,11 +59,16 @@ void	ScavTrap::attack(std::string target)
 		std::cout<< "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_atk << " points of damage"<<std::endl;
 		this->setEp(this->getEp() - 1);
 	}
-	else
+	else if (this->getEp() <= 0)
 		std::cout<< "ScavTrap " << this->_name << " ep is not suffisant" <<std::endl;
+	else
+		std::cout<< "ScavTrap " << this->_name << " is dead" <<std::endl;
 }
 
 void	ScavTrap::guardGate()
 {
-	std::cout<< "ScavTrap " << this->_name << " is in Gate keeper mode" <<std::endl;
+	if (this->getHp() > 0)
+		std::cout<< "ScavTrap " << this->_name << " is in Gate keeper mode" <<std::endl;
+	else
+		std::cout<< "ScavTrap " << this->_name << " is dead" <<std::endl;
 }

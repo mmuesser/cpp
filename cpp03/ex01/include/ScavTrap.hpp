@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 17:56:16 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/16 14:28:17 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/07 14:53:47 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ class	ScavTrap: public ClapTrap
 
 		void	attack(std::string name);
 		void 	guardGate();
-
-	private :
-		
-
 };
 
 #endif

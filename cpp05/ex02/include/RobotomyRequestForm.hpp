@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/06 17:13:39 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 13:35:12 by mmuesser         ###   ########.fr       */
+/*   Created: 2024/01/07 18:48:50 by mmuesser          #+#    #+#             */
+/*   Updated: 2024/01/07 18:52:34 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 
-class	Bureaucrat
+class	RobotomyRequestForm : public Form
 {
 	public :
-		Bureaucrat();
-		Bureaucrat(const std::string name, int grade);
-		Bureaucrat(const Bureaucrat &obj);
-		~Bureaucrat(void);
+		RobotomyRequestForm(void);
+		RobotomyRequestForm(const std::string target);
+		RobotomyRequestForm(const RobotomyRequestForm &obj);
+		virtual ~RobotomyRequestForm(void);
 
-		Bureaucrat&	operator=(const Bureaucrat &obj);
+		RobotomyRequestForm& operator=(const RobotomyRequestForm &obj);
+		void	beSigned(const Bureaucrat &obj);
 
-		void				upGrade(int nb);
-		void				lowGrade(int nb);
-		const std::string	getName(void) const;
-		int					getGrade(void) const;
-		
+		const std::string	getTarget(void) const;
+		bool				getSign(void) const;
+		int					getSignGrade(void) const;
+		int					getExecGrade(void) const;
+
 	private :
-		const std::string _name;
-		int			_grade;
+		const std::string	_target;
+		bool				_sign;
+		int					_sign_grade;
+		int					_exec_grade;
 
 		class	GradeTooHighException : public std::exception
 		{
@@ -42,7 +46,7 @@ class	Bureaucrat
 				~GradeTooHighException(void) throw() {}
 				char	*what() const throw()
 				{
-					return (char *) "ERROR: This grade is to high";
+					return (char *) "RobotomyRequestForm: This grade is to high";
 				}
 		};
 
@@ -53,11 +57,9 @@ class	Bureaucrat
 				~GradeTooLowException(void) throw() {}
 				char	*what() const throw()
 				{
-					return (char *) "ERROR: This grade is to low";
+					return (char *) "RobotomyRequestForm: This grade is to low";
 				}
 		};
 };
-
-std::ostream & operator<<(std::ostream &ost, const Bureaucrat &obj);
 
 #endif

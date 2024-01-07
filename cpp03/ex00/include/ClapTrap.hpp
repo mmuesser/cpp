@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:35:31 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/15 23:24:41 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/07 11:00:49 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ class	ClapTrap
 		int			getHp(void) const;
 		void		setHp(int hp);
 		int			getEp(void) const;
-		void		setEp(int hp);
+		void		setEp(int ep);
 		int			getAtk(void) const;
-		void		setAtk(int hp);
+		void		setAtk(int atk);
 
 	private :
 		std::string	_name;
@@ -44,6 +44,6 @@ class	ClapTrap
 		int			_ep;
 		int			_atk;
 
-};	
+};
 
 #endif

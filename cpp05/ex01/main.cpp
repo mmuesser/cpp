@@ -6,45 +6,30 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:04 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 14:26:27 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/07 19:03:32 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main(void)
 {
 	try
 	{
-		Bureaucrat test("test", -1);
-		Bureaucrat test2("test2", 155);
-
-		test.upGrade(6);
-		test2.lowGrade(63);
-		std::cout<< test<<std::endl;
-	}
-	catch (std::exception const &e)
-	{
-		std::cout<< e.what()<<std::endl;
-	}
-	
-	try
-	{
-		Bureaucrat bob("Bob", 15);
-		Bureaucrat jean("Jean", 142);
+		Form fst_Form;
+		Form snd_Form("snd_Form", 10, 150);
+		Form thrd_Form("thrd_Form", 89, 23);
 		std::cout<<"\n";
 
-		jean.lowGrade(10);
-		std::cout<< jean;
-		bob.upGrade(17);
-		std::cout<< bob;
+		Bureaucrat bob;
+		Bureaucrat jean("jean", 8);
 		std::cout<<"\n";
 
-		bob.lowGrade(17);
-		std::cout<< bob;
-		jean.upGrade(10);
-		std::cout<< jean;
-		std::cout<<"\n";
+		jean.signForm(fst_Form);
+		jean.signForm(snd_Form);
+		bob.signForm(thrd_Form);
+		bob.signForm(fst_Form);
 	}
 	catch (std::exception const &e)
 	{

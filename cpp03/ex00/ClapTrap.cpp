@@ -6,13 +6,13 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:36:02 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/16 17:58:56 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/07 15:10:09 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("Default"), _hp(100), _ep(10), _atk(0)
+ClapTrap::ClapTrap(void) : _name("Default"), _hp(10), _ep(10), _atk(0)
 {
 	std::cout<< "ClapTrap " << this->_name << " is created"<<std::endl;
 }

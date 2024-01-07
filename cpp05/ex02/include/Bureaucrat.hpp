@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:39 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 13:35:12 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/07 18:20:24 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <exception>
+#include "AForm.hpp"
+
+class AForm;
 
 class	Bureaucrat
 {
@@ -25,6 +28,7 @@ class	Bureaucrat
 		~Bureaucrat(void);
 
 		Bureaucrat&	operator=(const Bureaucrat &obj);
+		void	signAForm(AForm &obj);
 
 		void				upGrade(int nb);
 		void				lowGrade(int nb);
@@ -42,7 +46,7 @@ class	Bureaucrat
 				~GradeTooHighException(void) throw() {}
 				char	*what() const throw()
 				{
-					return (char *) "ERROR: This grade is to high";
+					return (char *) "BUREAUCRAT: This grade is to high";
 				}
 		};
 
@@ -53,7 +57,7 @@ class	Bureaucrat
 				~GradeTooLowException(void) throw() {}
 				char	*what() const throw()
 				{
-					return (char *) "ERROR: This grade is to low";
+					return (char *) "BUREAUCRAT: This grade is to low";
 				}
 		};
 };
