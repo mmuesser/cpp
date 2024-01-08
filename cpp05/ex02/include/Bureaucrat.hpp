@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:39 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 18:20:24 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:14:09 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,17 @@ class	Bureaucrat
 		~Bureaucrat(void);
 
 		Bureaucrat&	operator=(const Bureaucrat &obj);
-		void	signAForm(AForm &obj);
 
+		void				signForm(AForm &obj);
+		void				executeForm(AForm const &form);
 		void				upGrade(int nb);
 		void				lowGrade(int nb);
 		const std::string	getName(void) const;
 		int					getGrade(void) const;
 		
 	private :
-		const std::string _name;
-		int			_grade;
+		const std::string	_name;
+		int					_grade;
 
 		class	GradeTooHighException : public std::exception
 		{

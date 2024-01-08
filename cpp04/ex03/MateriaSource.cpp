@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 15:46:00 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/06 16:46:47 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 18:36:25 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ MateriaSource::MateriaSource(const MateriaSource &obj)
 	std::cout<< "MateriaSource copy constructor called"<<std::endl;
 	for (int i = 0; i < 4; i++)
 	{
+		if (this->_storage[i])
+			delete this->_storage[i];
 		if (obj._storage[i])
 			this->_storage[i] = obj._storage[i]->clone();
 		else

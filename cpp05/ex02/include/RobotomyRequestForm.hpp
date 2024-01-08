@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 18:48:50 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 18:52:34 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:10:58 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include <cstdlib>
+#include <time.h>
+#include "AForm.hpp"
 
-class	RobotomyRequestForm : public Form
+class	RobotomyRequestForm : public AForm
 {
 	public :
 		RobotomyRequestForm(void);
@@ -25,8 +27,9 @@ class	RobotomyRequestForm : public Form
 		RobotomyRequestForm(const RobotomyRequestForm &obj);
 		virtual ~RobotomyRequestForm(void);
 
-		RobotomyRequestForm& operator=(const RobotomyRequestForm &obj);
-		void	beSigned(const Bureaucrat &obj);
+		RobotomyRequestForm&	operator=(const RobotomyRequestForm &obj);
+		void					beSigned(const Bureaucrat &obj);
+		void					form_exec(void) const;
 
 		const std::string	getTarget(void) const;
 		bool				getSign(void) const;

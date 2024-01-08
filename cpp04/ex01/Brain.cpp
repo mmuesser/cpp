@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 19:38:07 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/21 16:58:33 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 15:48:00 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ void	Brain::setIdeas(std::string idea, int i)
 		std::cout<< "Index out of range"<<std::endl;
 		return ;
 	}
-	else
+	else if (!idea.empty())
 		this->_ideas[i] = idea;
 }

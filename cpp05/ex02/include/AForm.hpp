@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 13:44:41 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 18:56:34 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:17:21 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,21 @@ class	AForm
 		AForm(const AForm &obj);
 		~AForm(void);
 
-		AForm& operator=(const AForm &obj);
+		AForm& 			operator=(const AForm &obj);
 		virtual void	beSigned(const Bureaucrat &obj) = 0;
+		virtual	void	form_exec(void) const;
 		void			execute(Bureaucrat const &executor) const;
 
-		const std::string	getName(void) const;
-		bool				getSign(void) const;
-		int					getSignGrade(void) const;
-		int					getExecGrade(void) const;
+		virtual const std::string	getName(void) const;
+		virtual bool				getSign(void) const;
+		virtual int					getSignGrade(void) const;
+		virtual int					getExecGrade(void) const;
 	
 	private :
 		const std::string	_name;
 		bool				_sign;
-		int			_sign_grade;
-		int			_exec_grade;
+		int					_sign_grade;
+		int					_exec_grade;
 
 		class	GradeTooHighException : public std::exception
 		{
@@ -61,6 +62,17 @@ class	AForm
 				char	*what() const throw()
 				{
 					return (char *) "AForm: This grade is to low";
+				}
+		};
+
+		class	WrongSign : public std::exception
+		{
+			public :
+				WrongSign(void) throw() {}
+				~WrongSign(void) throw() {}
+				char	*what() const throw()
+				{
+					return (char *) "AForm: This form is not signed";
 				}
 		};
 

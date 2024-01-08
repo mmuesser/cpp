@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 18:54:24 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 18:55:21 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 12:17:30 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class	PresidentialPardonForm : public Form
+class	PresidentialPardonForm : public AForm
 {
 	public :
 		PresidentialPardonForm(void);
@@ -25,8 +25,9 @@ class	PresidentialPardonForm : public Form
 		PresidentialPardonForm(const PresidentialPardonForm &obj);
 		virtual ~PresidentialPardonForm(void);
 
-		PresidentialPardonForm& operator=(const PresidentialPardonForm &obj);
-		void	beSigned(const Bureaucrat &obj);
+		PresidentialPardonForm&	operator=(const PresidentialPardonForm &obj);
+		void					beSigned(const Bureaucrat &obj);
+		void					form_exec(void) const;
 
 		const std::string	getTarget(void) const;
 		bool				getSign(void) const;

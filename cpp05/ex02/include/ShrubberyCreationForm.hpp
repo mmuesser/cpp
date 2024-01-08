@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 18:23:03 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 18:51:20 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:03:28 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include <fstream>
+#include "AForm.hpp"
 
-class	ShrubberyCreationForm : public Form
+class	ShrubberyCreationForm : public AForm
 {
 	public :
 		ShrubberyCreationForm(void);
@@ -26,7 +27,8 @@ class	ShrubberyCreationForm : public Form
 		virtual ~ShrubberyCreationForm(void);
 
 		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm &obj);
-		void			beSigned(const Bureaucrat &obj);
+		void					beSigned(const Bureaucrat &obj);
+		void					form_exec(void) const;
 
 		const std::string	getTarget(void) const;
 		bool				getSign(void) const;

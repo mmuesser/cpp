@@ -6,23 +6,23 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 18:52:39 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 18:53:45 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:56:47 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(void) : AForm(), _target("SCF_default"), _sign(false), _sign_grade(145), _exec_grade(137)
+RobotomyRequestForm::RobotomyRequestForm(void) : AForm("fr", 42, 45), _target("SCF_default"), _sign(false)
 {
 	std::cout<< "RobotomyRequestForm default constructor called"<<std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm(), _target(target), _sign(false), _sign_grade(145), _exec_grade(137)
+RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("fr", 72, 45), _target(target), _sign(false)
 {
 	std::cout<< "RobotomyRequestForm target constructor called"<<std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm(), _target(obj.gettarget()), _sign(obj.getSign()), _sign_grade(obj.getSignGrade()), _exec_grade(obj.getExecGrade())
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm(obj.getName(), obj.getSignGrade(), obj.getExecGrade()), _target(obj.getTarget()), _sign(obj.getSign())
 {
 	std::cout<< "RobotomyRequestForm copy constructor called"<<std::endl;
 }
@@ -47,6 +47,15 @@ void	RobotomyRequestForm::beSigned(const Bureaucrat &obj)
 		throw GradeTooLowException();
 }
 
+void	RobotomyRequestForm::form_exec(void) const
+{
+	srand(time(0));
+	if (rand() % 2 == 0)
+		std::cout<< this->getTarget() << " has been succesfully robotomized"<<std::endl;
+	else
+		std::cout<< "Sorry, the robotomization of " << this->getTarget() << " failed"<<std::endl;
+}
+
 const std::string	RobotomyRequestForm::getTarget(void) const
 {
 	return (this->_target);
@@ -64,5 +73,5 @@ int	RobotomyRequestForm::getSignGrade(void) const
 
 int	RobotomyRequestForm::getExecGrade(void) const
 {
-	return (this->exec_grade);
+	return (this->_exec_grade);
 }

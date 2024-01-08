@@ -1,4 +1,4 @@
-NAME	=	AForm
+NAME	=	replace
 CC		=	c++
 FLAG	=	-Wall -Wextra -Werror -std=c++98 -g3
 
@@ -6,13 +6,13 @@ SRC_DIR	=	src/
 OBJ_DIR	=	obj/
 
 #Source
-FILES	=	main Bureaucrat AForm ShrubberyCreationForm PresidentialPardonForm RobotomyRequestForm
-SRCS	=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(FILES)))
-OBJS	=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(FILES)))
+FILES	=	main
+SRCS	=	$(testprefix $(SRC_DIR), $(testsuffix .cpp, $(FILES)))
+OBJS	=	$(testprefix $(OBJ_DIR), $(testsuffix .o, $(FILES)))
 
 INCLUDE	=	-I ./src/class -I ./include
-HNAME	=	Bureaucrat AForm ShrubberyCreationForm PresidentialPardonForm RobotomyRequestForm
-HEADER	=	$(addsuffix .hpp, $(HNAME))
+HNAME	=	
+HEADER	=	$(testsuffix .hpp, $(HNAME))
 
 OBJF	=	.cache_exits
 
@@ -27,7 +27,7 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(CC) $(FLAG) $(OBJS) $(INCLUDE) -o $(NAME)
 	@echo "$(GREEN)Compiled!$(DEF_COLOR)"
-	@echo "Launch the program with $(RED)./${NAME}"
+	@echo "Launch the program with $(RED)./${NAME} <file> <s1> <s2>"
 
 $(OBJ_DIR)%.o : %.cpp $(HEADER) Makefile | $(OBJF)
 	$(CC) $(FLAG) $(INCLUDE) -c $< -o $@

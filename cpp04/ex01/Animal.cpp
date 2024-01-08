@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:26:11 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/21 17:03:57 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 15:38:19 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,6 @@ Animal::~Animal(void)
 Animal&	Animal::operator=(const Animal& obj)
 {
 	this->type = obj.type;
-	for (int i = 0; i < 100; i++)
-	{
-		this->getBrain()->setIdeas(obj.getBrain()->getIdeas(i), i);
-	}
 	return (*this);
 }
 

@@ -6,23 +6,23 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 18:53:47 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 18:54:21 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:55:57 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void) : AForm(), _target("SCF_default"), _sign(false), _sign_grade(145), _exec_grade(137)
+PresidentialPardonForm::PresidentialPardonForm(void) : AForm("fp", 25, 5), _target("SCF_default"), _sign(false)
 {
 	std::cout<< "PresidentialPardonForm default constructor called"<<std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string target) : AForm(), _target(target), _sign(false), _sign_grade(145), _exec_grade(137)
+PresidentialPardonForm::PresidentialPardonForm(const std::string target) : AForm("fp", 25, 5), _target(target), _sign(false)
 {
 	std::cout<< "PresidentialPardonForm target constructor called"<<std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : AForm(), _target(obj.gettarget()), _sign(obj.getSign()), _sign_grade(obj.getSignGrade()), _exec_grade(obj.getExecGrade())
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : AForm(obj.getName(), obj.getSignGrade(), obj.getExecGrade()), _target(obj.getTarget()), _sign(obj.getSign())
 {
 	std::cout<< "PresidentialPardonForm copy constructor called"<<std::endl;
 }
@@ -47,6 +47,11 @@ void	PresidentialPardonForm::beSigned(const Bureaucrat &obj)
 		throw GradeTooLowException();
 }
 
+void	PresidentialPardonForm::form_exec(void) const
+{
+	std::cout<< "We inform you that " << this->getTarget() << " has been pardoned by Zaphod Beeblebrox"<<std::endl;
+}
+
 const std::string	PresidentialPardonForm::getTarget(void) const
 {
 	return (this->_target);
@@ -64,5 +69,5 @@ int	PresidentialPardonForm::getSignGrade(void) const
 
 int	PresidentialPardonForm::getExecGrade(void) const
 {
-	return (this->exec_grade);
+	return (this->_exec_grade);
 }

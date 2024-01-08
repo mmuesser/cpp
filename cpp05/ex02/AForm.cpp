@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-AForm::AForm(void) : _name("noAForm"), _sign(false), _sign_grade(150), _exec_grade(150)
+AForm::AForm(void) : _name("default_form"), _sign(false), _sign_grade(150), _exec_grade(150)
 {
 	std::cout<< "AForm default constructor called"<<std::endl;
 }
@@ -71,10 +72,19 @@ AForm&	AForm::operator=(const AForm &obj)
 // 		throw GradeTooLowException();
 // }
 
+void	AForm::form_exec(void) const
+{
+	std::cout<< "What should I do with this ??"<<std::endl;
+}
+
 void	AForm::execute(Bureaucrat const &executor) const
 {
-	// if (!this->getSign())
-		// throw new exception for sign
+	if (!this->getSign())
+		throw WrongSign();
+	if (this->getExecGrade() < executor.getGrade())
+		throw GradeTooLowException();
+	else
+		this->form_exec();
 }
 
 const std::string	AForm::getName(void) const

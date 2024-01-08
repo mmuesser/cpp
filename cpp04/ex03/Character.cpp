@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 14:58:34 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/06 16:46:57 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 18:35:45 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ Character::Character(const Character &obj)
 	this->_name = obj.getName();
 	for (int i = 0; i < 4; i++)
 	{
+		if (this->_inventory[i])
+			delete this->_inventory[i];
 		if (obj._inventory[i])
 			this->_inventory[i] = obj._inventory[i]->clone();
 		else
