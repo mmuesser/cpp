@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 18:32:10 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/08 14:58:14 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 18:43:27 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void	ShrubberyCreationForm::beSigned(const Bureaucrat &obj)
 {
-	if (obj.getGrade() <= this->getSignGrade())
+	if (obj.getGrade() >= this->getSignGrade())
 		this->_sign = true;
 	else
 		throw GradeTooLowException();

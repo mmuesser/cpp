@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 18:52:39 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/08 14:56:47 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/08 18:42:48 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 
 void	RobotomyRequestForm::beSigned(const Bureaucrat &obj)
 {
-	if (obj.getGrade() <= this->getSignGrade())
+	if (obj.getGrade() >= this->getSignGrade())
 		this->_sign = true;
 	else
 		throw GradeTooLowException();
