@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 13:44:41 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 19:01:39 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:46:45 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ class	Form
 
 		const std::string	getName(void) const;
 		bool				getSign(void) const;
-		int			getSignGrade(void) const;
-		int			getExecGrade(void) const;
+		int					getSignGrade(void) const;
+		int					getExecGrade(void) const;
 	
 	private :
 		const std::string	_name;
 		bool				_sign;
-		int			_sign_grade;
-		int			_exec_grade;
+		const int			_sign_grade;
+		const int			_exec_grade;
 
 		class	GradeTooHighException : public std::exception
 		{

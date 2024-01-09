@@ -6,14 +6,14 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 14:58:34 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/08 18:35:45 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:35:30 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "AMateria.hpp"
 
-Character::Character()
+Character::Character(void)
 {
 	std::cout<< "Character default constructor called"<<std::endl;
 	this->_name = "NoName";
@@ -73,11 +73,6 @@ Character&	Character::operator=(const Character &obj)
 	return (*this);
 }
 
-std::string	const & Character::getName() const
-{
-	return (this->_name);
-}
-
 void	Character::equip(AMateria* m)
 {
 	int i;
@@ -113,4 +108,8 @@ void	Character::use(int idx, ICharacter& target)
 	}
 	if (this->_inventory[idx] != 0)
 		this->_inventory[idx]->use(target);
+}
+std::string	const & Character::getName() const
+{
+	return (this->_name);
 }
