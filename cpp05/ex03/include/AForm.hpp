@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 13:44:41 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/09 17:49:14 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:53:34 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	AForm
 		AForm(void);
 		AForm(const std::string name, const int sign_grade, const int exec_grade);
 		AForm(const AForm &obj);
-		~AForm(void);
+		virtual ~AForm(void);
 
 		AForm& 			operator=(const AForm &obj);
 		void	beSigned(const Bureaucrat &obj);

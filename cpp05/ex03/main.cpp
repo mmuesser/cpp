@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:04 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/09 20:51:43 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:17:03 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void)
 
 		std::cout<<"\n";
 		fr1 = eric.makeForm("robotomy request", "Jean");
-		fs1 = eric.makeForm("shrubbery creation", "Jean");
+		fs1 = eric.makeForm("shrubbery creation", "house1");
 		fp1 = eric.makeForm("presidential pardon", "Jean");
 		std::cout<<"\n";
 
@@ -44,6 +44,10 @@ int	main(void)
 		std::cout<<"\n";
 		bob.executeForm(*fp1);
 		std::cout<<"\n";
+
+		delete fr1;
+		delete fs1;
+		delete fp1;
 	}
 	catch (std::exception const &e)
 	{
@@ -59,7 +63,7 @@ int	main(void)
 
 		std::cout<<"\n";
 		fr1 = eric.makeForm("robotomy request", "Jean");
-		fs1 = eric.makeForm("shrubbery creation", "Jean");
+		fs1 = eric.makeForm("shrubbery creation", "house2");
 		fp1 = eric.makeForm("presidential pardon", "Jean");
 		std::cout<<"\n";
 
@@ -75,6 +79,10 @@ int	main(void)
 		std::cout<<"\n";
 		jean.executeForm(*fp1);
 		std::cout<<"\n";
+
+		delete fr1;
+		delete fs1;
+		delete fp1;
 	}
 	catch (std::exception const &e)
 	{
@@ -91,7 +99,7 @@ int	main(void)
 
 		std::cout<<"\n";
 		fr1 = eric.makeForm("robotomy request", "Jean");
-		fs1 = eric.makeForm("shrubbery creation", "Jean");
+		fs1 = eric.makeForm("shrubbery creation", "house3");
 		fp1 = eric.makeForm("presidential pardon", "Jean");
 		std::cout<<"\n";
 
@@ -107,6 +115,10 @@ int	main(void)
 		std::cout<<"\n";
 		marc.executeForm(*fp1);
 		std::cout<<"\n";
+
+		delete fr1;
+		delete fs1;
+		delete fp1;
 	}
 	catch (std::exception const &e)
 	{

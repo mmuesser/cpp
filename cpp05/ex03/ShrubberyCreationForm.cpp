@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 18:32:10 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/09 17:42:09 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/11 17:39:49 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,20 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationF
 void	ShrubberyCreationForm::form_exec(void) const
 {
 	std::string tmp = this->getTarget() + "_shrubbery";
-	std::ofstream	f_sortie(tmp.c_str());
+	std::ofstream	f_sortie(tmp.c_str(), std::ios::out | std::ios::trunc);
 	if (!f_sortie)
 		return ;
-	f_sortie<< "ASCII TREES"<<std::endl;
+	f_sortie << "                ,@@@@@@@,\n ";
+	f_sortie << "       ,,,.   ,@@@@@@/@@,  .oo8888o.\n ";
+	f_sortie << "    ,&\%%&%&&%,@@@@@/@@@@@@,8888\\88/8o\n ";
+	f_sortie << "   ,%&\%&&%&&%,@@@\\@@@/@@@88\\88888/88'\n ";
+	f_sortie << "   %&&%&%&/%&&%@@\\@@/ /@@@88888\\88888'\n ";
+	f_sortie << "   %&&%/ %&\%%&&@@\\ V /@@' `88\\8 `/88'\n ";
+	f_sortie << "   `&%\\ ` /%&'    |.|        \\ '|8'\n ";
+	f_sortie << "       |o|        | |         | |\n ";
+	f_sortie << "       |.|        | |         | |\n ";
+	f_sortie << "jgs \\\\/ ._\\//_/__/  ,\\_//__\\\\/.  \\_//__/\n ";
+	f_sortie.close();
 }
 
 const std::string	ShrubberyCreationForm::getTarget(void) const
