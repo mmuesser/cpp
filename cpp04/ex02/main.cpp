@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:23:23 by mmuesser          #+#    #+#             */
-/*   Updated: 2023/12/21 17:20:22 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/11 14:44:27 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,8 @@ int	main(void)
 	{
 		delete pets[i];
 	}
+	// {
+	// 	Animal	test;
+	// }
 	return 0;
 }

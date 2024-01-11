@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 18:23:23 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/08 15:54:58 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/11 14:42:47 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	main(void)
 
 	{
 		Dog dog1;
-		// Dog dog2;
 		Dog dog2 = dog1;
 		std::cout << dog1.getBrain() << std::endl;
 		std::cout << dog2.getBrain() << std::endl;

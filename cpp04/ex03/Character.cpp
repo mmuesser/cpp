@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 14:58:34 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/09 17:35:30 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:15:27 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,8 @@ void	Character::use(int idx, ICharacter& target)
 	}
 	if (this->_inventory[idx] != 0)
 		this->_inventory[idx]->use(target);
+	else
+		std::cout<< "This pocket is empty..."<<std::endl;
 }
 std::string	const & Character::getName() const
 {
