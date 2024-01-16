@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:28 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/08 14:49:33 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/16 11:17:06 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,18 @@ void	Bureaucrat::signForm(AForm &obj)
 {
 	try
 	{
+		if (obj.getSign() == true)
+		{
+			std::cout<< "This form is already signed"<<std::endl;
+			return ;
+		}
 		obj.beSigned(*this);
+		std::cout<< this->getName() << " signed " << obj.getName()<<std::endl;
 	}
-	catch (std::exception &e)
+	catch (std::exception const &e)
 	{
 		std::cout<< this->getName() << " couldn't signed " << obj.getName() << " because " << e.what() <<std::endl;
-		return ;
 	}
-	std::cout<< this->getName() << " signed " << obj.getName()<<std::endl;
 }
 
 void	Bureaucrat::executeForm(AForm const &form)
@@ -77,33 +81,17 @@ void	Bureaucrat::executeForm(AForm const &form)
 	std::cout<< this->getName() << " executed " << form.getName()<<std::endl;
 }
 
-void	Bureaucrat::upGrade(int nb)
+void	Bureaucrat::upGrade(void)
 {
-	// try
-	// {
-		if (this->_grade - nb < 1)
-			throw GradeTooHighException();
-		this->_grade -= nb;
-	// }
-	// catch (std::exception const &e)
-	// {
-	// 	std::cout<< e.what()<<std::endl;
-	// 	return ;
-	// }
+	if (this->_grade - 1 < 1)
+		throw GradeTooHighException();
+	this->_grade--;
 }
-void	Bureaucrat::lowGrade(int nb)
+void	Bureaucrat::lowGrade(void)
 {
-	// try
-	// {
-		if (this->_grade + nb > 150)
-			throw GradeTooLowException();
-		this->_grade += nb;
-	// }
-	// catch (std::exception const &e)
-	// {
-	// 	std::cout<< e.what()<<std::endl;
-	// 	return ;
-	// }
+	if (this->_grade + 1 > 150)
+		throw GradeTooLowException();
+	this->_grade++;	
 }
 
 const std::string	Bureaucrat::getName(void) const

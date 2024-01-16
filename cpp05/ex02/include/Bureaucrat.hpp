@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:39 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/08 14:14:09 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/16 11:14:09 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ class	Bureaucrat
 
 		void				signForm(AForm &obj);
 		void				executeForm(AForm const &form);
-		void				upGrade(int nb);
-		void				lowGrade(int nb);
+		void				upGrade(void);
+		void				lowGrade(void);
 		const std::string	getName(void) const;
 		int					getGrade(void) const;
 		

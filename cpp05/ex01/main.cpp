@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:04 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 19:03:32 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/16 11:12:33 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(void)
 		jean.signForm(snd_Form);
 		bob.signForm(thrd_Form);
 		bob.signForm(fst_Form);
+		std::cout<<"\n";
 	}
 	catch (std::exception const &e)
 	{

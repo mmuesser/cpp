@@ -6,13 +6,22 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:39 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/08 14:14:09 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/16 11:40:27 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#define RESET "\033[0m"
+#define BLACK "\033[0;30m"
+#define RED "\033[0;31m"
+#define GREEN "\033[0;32m"
+#define YELLOW "\033[0;33m"
+#define BLUE "\033[0;34m"
+#define PURPLE "\033[0;35m"
+#define CYAN "\033[0;36m"
+#define WHITE "\033[0;37m"
 #include <iostream>
 #include <exception>
 #include "AForm.hpp"
@@ -31,8 +40,8 @@ class	Bureaucrat
 
 		void				signForm(AForm &obj);
 		void				executeForm(AForm const &form);
-		void				upGrade(int nb);
-		void				lowGrade(int nb);
+		void				upGrade(void);
+		void				lowGrade(void);
 		const std::string	getName(void) const;
 		int					getGrade(void) const;
 		

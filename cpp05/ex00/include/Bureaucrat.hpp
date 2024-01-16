@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:39 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 13:35:12 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/16 10:41:50 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class	Bureaucrat
 
 		Bureaucrat&	operator=(const Bureaucrat &obj);
 
-		void				upGrade(int nb);
-		void				lowGrade(int nb);
+		void				upGrade(void);
+		void				lowGrade(void);
 		const std::string	getName(void) const;
 		int					getGrade(void) const;
 		

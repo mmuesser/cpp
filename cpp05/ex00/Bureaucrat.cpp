@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 17:13:28 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/07 14:24:25 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/16 10:47:53 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,33 +49,17 @@ Bureaucrat&	Bureaucrat::operator=(const Bureaucrat &obj)
 	return (*this);
 }
 
-void	Bureaucrat::upGrade(int nb)
+void	Bureaucrat::upGrade(void)
 {
-	// try
-	// {
-		if (this->_grade - nb < 1)
-			throw GradeTooHighException();
-		this->_grade -= nb;
-	// }
-	// catch (std::exception const &e)
-	// {
-	// 	std::cout<< e.what()<<std::endl;
-	// 	return ;
-	// }
+	if (this->_grade - 1 < 1)
+		throw GradeTooHighException();
+	this->_grade--;
 }
-void	Bureaucrat::lowGrade(int nb)
+void	Bureaucrat::lowGrade(void)
 {
-	// try
-	// {
-		if (this->_grade + nb > 150)
-			throw GradeTooLowException();
-		this->_grade += nb;
-	// }
-	// catch (std::exception const &e)
-	// {
-	// 	std::cout<< e.what()<<std::endl;
-	// 	return ;
-	// }
+	if (this->_grade + 1 > 150)
+		throw GradeTooLowException();
+	this->_grade++;
 }
 
 const std::string	Bureaucrat::getName(void) const
@@ -87,7 +71,6 @@ int	Bureaucrat::getGrade(void) const
 {
 	return (this->_grade);
 }
-
 
 std::ostream & operator<<(std::ostream &ost, const Bureaucrat &obj)
 {

@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 13:44:41 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/09 17:49:14 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/16 11:20:14 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class	AForm
 		~AForm(void);
 
 		AForm& 			operator=(const AForm &obj);
-		void	beSigned(const Bureaucrat &obj);
+		void			beSigned(const Bureaucrat &obj);
 		virtual	void	form_exec(void) const = 0;
 		void			execute(Bureaucrat const &executor) const;
 
@@ -40,8 +40,8 @@ class	AForm
 	private :
 		const std::string	_name;
 		bool				_sign;
-		const int					_sign_grade;
-		const int					_exec_grade;
+		const int			_sign_grade;
+		const int			_exec_grade;
 
 		class	GradeTooHighException : public std::exception
 		{
