@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 14:08:41 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/16 16:15:48 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/18 21:28:26 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,17 @@ void	ScalarConverter::convert(std::string const &value)
 																	 &ScalarConverter::floatConvert,
 																	 &ScalarConverter::doubleConvert};
 	int type = getType(value);
+	
 }
 
 int		ScalarConverter::getType(std::string const &value)
 {
-	int type = 0;
-
-	return (type);
+	if (value[0] >= 'a' && value[0] <= 'z' || value[0] >= 'A' && value[0] <= 'Z')
+		return (0)
+	if (std::stoi(value))
+	if (value.size() > 1 && value[value.size() - 1] == 'f')
+		return (2)
+	return (-1);
 }
 
 char	ScalarConverter::charConvert(std::string const &value)
