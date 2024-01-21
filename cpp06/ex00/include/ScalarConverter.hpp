@@ -6,46 +6,55 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 14:04:25 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/16 16:37:01 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/21 21:08:00 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
-#define SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <iomanip>
+# include <cctype>
+# include <limits>
+# include <cstdlib>
+# include <cmath>
+# include <sstream>
 
-typedef struct	s_num
+struct	number
 {
-
-	int c;
-	int i;
-	int f;
-	int d;
-
-	bool c_ok;
-	bool i_ok;
-	bool f_ok;
-	bool d_ok;
-
-}	t_num;
+	char	c;
+	int		i;
+	float	f;
+	double	d;
+	
+	bool	c_ok;
+	bool	i_ok;
+	bool	d_ok;
+	bool	f_ok;
+};
 
 class	ScalarConverter
 {
-	public :
-		static void	convert(std::string const &value);
-	private :
-		ScalarConverter(void);
-		ScalarConverter(const ScalarConverter &obj);
-		~ScalarConverter(void);
+	public:
+		static void	convert(std::string const & literal);
 
-		ScalarConverter&	operator=(const ScalarConverter &obj);
-		int					getType(std::string const &value);
-		char				charConvert(std::string const &value);
-		int					intConvert(std::string const &value);
-		float				floatConvert(std::string const &value);
-		double				doubleConvert(std::string const &value);
+	private:
+		ScalarConverter();
+		ScalarConverter(ScalarConverter const & sc);
+		~ScalarConverter();
+		ScalarConverter & operator=(ScalarConverter const & rhs);
+		
+		static void	convertNumber(std::string const & literal, struct number & nb);
+		static int	getType(std::string const & literal);
+		static int	nbParsing(std::string const & literal);
+		static void	charCast(std::string const & literal, struct number & nb);
+		static void	intCast(std::string const & literal, struct number & nb);
+		static void	doubleCast(std::string const & literal, struct number & nb);
+		static void floatCast(std::string const & literal, struct number & nb);
+		static void dspecCast(std::string const & literal, struct number & nb);
+		static void fspecCast(std::string const & literal, struct number & nb);
+		static void printNb(struct number const & nb);
 };
 
 #endif
