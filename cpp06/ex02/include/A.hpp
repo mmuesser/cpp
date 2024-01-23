@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:30:13 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/22 17:35:35 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:07:18 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 #include "Base.hpp"
 
 class A : public Base
-{
-
-
-};
+{};
 
 #endif

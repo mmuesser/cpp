@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:26:16 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/22 17:08:32 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:54:12 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 
 typedef struct s_data
 {
-	int nb;
+	int			nb;
+	std::string str;
 }	Data;
 
 class Serialization

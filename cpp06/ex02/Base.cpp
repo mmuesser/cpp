@@ -6,13 +6,11 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 17:27:20 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/22 17:34:29 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:56:52 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
 Base::~Base(void)
-{
-	std::cout<< "Base destructor called"<<std::endl;
-}
+{}

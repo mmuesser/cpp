@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 14:08:41 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/21 21:07:28 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:44:59 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ScalarConverter::ScalarConverter()
 {}
 
-ScalarConverter::ScalarConverter(ScalarConverter const & sc)
+ScalarConverter::ScalarConverter(ScalarConverter const &sc)
 {
 	static_cast<void>(sc);
 }
@@ -23,13 +23,13 @@ ScalarConverter::ScalarConverter(ScalarConverter const & sc)
 ScalarConverter::~ScalarConverter()
 {}
 
-ScalarConverter & ScalarConverter::operator=(ScalarConverter const & rhs)
+ScalarConverter & ScalarConverter::operator=(ScalarConverter const &rhs)
 {
 	static_cast<void>(rhs);
 	return *this;
 }
 
-void	ScalarConverter::convert(std::string const & literal)
+void	ScalarConverter::convert(std::string const &literal)
 {
 	int	type = 4;
 	struct number nb = {0, 0, 0, 0, false, false, false, false};
@@ -52,7 +52,7 @@ void	ScalarConverter::convert(std::string const & literal)
 	printNb(nb);
 }
 
-int ScalarConverter::getType(std::string const & literal)
+int ScalarConverter::getType(std::string const &literal)
 {
 	std::string const dspecial[] = {"-inf", "+inf", "nan"};
 	std::string const fspecial[] = {"-inff", "+inff", "nanf"};
@@ -71,7 +71,7 @@ int ScalarConverter::getType(std::string const & literal)
 	return (nbParsing(literal));
 }
 
-int	ScalarConverter::nbParsing(std::string const &  literal)
+int	ScalarConverter::nbParsing(std::string const &literal)
 {
 	int	state = 0;
 
