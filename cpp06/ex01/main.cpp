@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:25:58 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/23 14:55:36 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:18:25 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(void)
 	raw1 = Serialization::serialize(ptr1);
 
 	ptr2 = Serialization::deserialize(raw1);
-	std::cout<< "ptr apres :"<<std::endl;
+	std::cout<< "\nptr apres :"<<std::endl;
 	std::cout<< ptr2->nb <<std::endl;
 	std::cout<< ptr2->str <<std::endl;
 	std::cout<< ptr2<<std::endl;
@@ -52,7 +52,7 @@ int	main(void)
 	raw2 = Serialization::serialize(ptr3);
 
 	ptr4 = Serialization::deserialize(raw2);
-	std::cout<< "ptr apres :"<<std::endl;
+	std::cout<< "\nptr apres :"<<std::endl;
 	std::cout<< ptr4->nb <<std::endl;
 	std::cout<< ptr4->str <<std::endl;
 	std::cout<< ptr4<<std::endl;
@@ -71,9 +71,9 @@ int	main(void)
 	std::cout<< ptr5<<std::endl;
 	std::cout<< "\n";
 	raw3 = Serialization::serialize(ptr5);
-
+	
 	ptr6 = Serialization::deserialize(raw3);
-	std::cout<< "ptr apres :"<<std::endl;
+	std::cout<< "\nptr apres :"<<std::endl;
 	std::cout<< ptr6->nb <<std::endl;
 	std::cout<< ptr6->str <<std::endl;
 	std::cout<< ptr6<<std::endl;
