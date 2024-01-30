@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 18:40:16 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/28 21:12:44 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/30 13:58:58 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ template <typename T>
 Array<T>::Array(void)
 {
 	this->_array = new T[0];
-	this->_array = 0;
-	this->_array_size = 1;
+	this->_array_size = 0;
 	std::cout<< "Array default constructor called"<<std::endl;
 }
 

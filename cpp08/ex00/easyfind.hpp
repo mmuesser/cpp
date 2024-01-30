@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 16:07:20 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/30 14:09:27 by mmuesser         ###   ########.fr       */
+/*   Created: 2024/01/30 12:13:36 by mmuesser          #+#    #+#             */
+/*   Updated: 2024/01/30 14:47:42 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-#define ITER_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
+#include <vector>
+#include <algorithm>
 #include <iostream>
 
-// template <typename T>
-// void	print(T &arg)
-// {
-// 	std::cout<< arg << std::endl;
-// }
-
-template <typename T, typename F>
-void	iter(T *array, size_t l_array, F func)
+template<typename T>
+typename T::iterator easyfind(T &tab, int i)
 {
-	for (size_t i = 0; i < l_array; i++)
-		func(array[i]);
+	return (std::find(tab.begin(), tab.end(), i));
 }
 
 #endif
