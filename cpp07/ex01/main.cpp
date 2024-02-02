@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 16:12:43 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/30 15:15:39 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/01/30 15:20:39 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(void)
 {
-	const char	str[] = "Hello World";
-	const int	tab[] = {0, 1, 2, 3, 4, 5, 42};
+	char	str[] = "Hello World";
+	int	tab[] = {0, 1, 2, 3, 4, 5, 42};
 	std::string str2[] = {"balbal", "test"};
 
 	std::cout<< "============CHAR *============"<<std::endl;

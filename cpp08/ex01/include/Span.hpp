@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 16:07:20 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/30 15:20:27 by mmuesser         ###   ########.fr       */
+/*   Created: 2024/01/30 15:30:03 by mmuesser          #+#    #+#             */
+/*   Updated: 2024/02/02 16:54:52 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-#define ITER_HPP
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
+#include <vector>
 #include <iostream>
+#include <algorithm>
 
-template <typename T>
-void	print(T &arg)
+class Span
 {
-	std::cout<< arg << std::endl;
-}
+	public :
+		Span(void);
+		Span(unsigned int n);
+		Span(const Span &obj);
+		~Span(void);
 
-template <typename T, typename F>
-void	iter(T *array, size_t l_array, F func)
-{
-	for (size_t i = 0; i < l_array; i++)
-		func(array[i]);
-}
+		Span&	operator=(const Span &obj);
+		void	addNumber(int nb);
+		int		shortestSpan(void);
+		int		longestSpan(void);
+		void	addRange(std::vector<int> tab);
+	
+	private :
+		std::vector<int>	_vec;
+		unsigned int		_size;
+
+};
 
 #endif
