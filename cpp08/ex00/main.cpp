@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:31:02 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/01/30 15:28:26 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/02/07 14:02:18 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ int	main(void)
 			std::cout<< vec[i] <<std::endl;
 		it = easyfind(vec, 40);
 		if (it == vec.end())
-			std::cout<< "Error: this value (')') does not exist"<<std::endl;
+			std::cout<< "Error: this value ('(') does not exist"<<std::endl;
 		else
-			std::cout<< "[')'] Found at vec[" << it - vec.begin() << "]."<<std::endl;
+			std::cout<< "['('] Found at vec[" << it - vec.begin() << "]."<<std::endl;
 	}
 	std::cout<<"==============================================\n";
 	{
