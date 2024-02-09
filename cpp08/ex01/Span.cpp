@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 14:02:58 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/02/07 14:11:34 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:05:44 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,14 @@ Span&	Span::operator=(const Span &obj)
 void	Span::addNumber(int nb)
 {
 	if (this->_vec.size() >= this->_size)
-	{
-		std::cout<< "Error: the vector is already full"<<std::endl;
-		return ;
-	}
+		throw SpanFull();
 	this->_vec.push_back(nb);
 }
 
 int	Span::shortestSpan(void)
 {
+	if (this->_vec.size() <= 1)
+		throw NotEnoughNumber();
 	int	min = 2147483647;
 	std::sort(this->_vec.begin(), this->_vec.end());
 	for (unsigned int i = 0; i < this->_vec.size() - 1; i++)
@@ -64,6 +63,8 @@ int	Span::shortestSpan(void)
 
 int	Span::longestSpan(void)
 {
+	if (this->_vec.size() <= 1)
+		throw NotEnoughNumber();
 	int max = *std::max_element(_vec.begin(), _vec.end());
 	int min = *std::min_element(_vec.begin(), _vec.end());
 	return (max - min);

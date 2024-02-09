@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:30:03 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/02/02 16:54:52 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:04:15 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <exception>
 
 class Span
 {
@@ -35,6 +36,24 @@ class Span
 		std::vector<int>	_vec;
 		unsigned int		_size;
 
+};
+
+class	SpanFull : public std::exception
+{
+	public :
+		char	*what() const throw()
+		{
+			return (char *) "Error: This Span is already full";
+		}
+};
+
+class	NotEnoughNumber : public std::exception
+{
+	public :
+		char	*what() const throw()
+		{
+			return (char *) "Error: There is not enough numbers in the span";
+		}
 };
 
 #endif
