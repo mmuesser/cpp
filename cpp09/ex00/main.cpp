@@ -6,13 +6,11 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:53:53 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/02/09 18:42:45 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/02/10 14:14:45 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-
-//utiliser multimap
 
 int	main(int ac, char **av)
 {
@@ -23,16 +21,17 @@ int	main(int ac, char **av)
 		std::multimap<std::string, float> data_map = make_data_map();
 		std::multimap<std::string, float> file_map = make_file_map(av[1]);
 		std::multimap<std::string, float>::iterator it = file_map.begin();
-		while (it != file-map.end())
+		std::multimap<std::string, float>::iterator ite = data_map.begin();
+		while (it != file_map.end())
 		{
-			bool b = //check validite date
+			bool b = check_date(it); //check validite date
 			if (!b)
 			{
 				it++;
 				continue ;
 			}
-			float i = //res value conversion
-			if (b && i)
+			float i = convert_value(it, ite);//res value conversion
+			if (i)
 				std::cout<< it->first << " => " << it->second << i<<std::endl;
 			it++;
 		}

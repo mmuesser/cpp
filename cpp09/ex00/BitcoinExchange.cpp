@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:53:30 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/02/09 18:41:00 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/02/10 17:41:26 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,25 +61,16 @@ std::multimap<std::string, float>	make_file_map(char *file_name)
 	return (file_map);
 }
 
-float	convert_value(/*file_map it, data_map*/)
-
-void	check_date(/**/)
+bool	check_date(std::multimap::iterator it)
 {
-	//mettre date_map dans .hpp pour eviter de redef a chaque appel
-	std::multimap<std::string, std::string> date_map;
-	date_map[01] = "31";
-	date_map[02] = "28";
-	date_map[03] = "31";
-	date_map[04] = "30";
-	date_map[05] = "31";
-	date_map[06] = "30";
-	date_map[07] = "31";
-	date_map[08] = "31";
-	date_map[09] = "30";
-	date_map[10] = "31";
-	date_map[11] = "30";
-	date_map[12] = "31";
+	
+	// if (/*date pas bonne*/)
+	// 	return (std::cout<< "Error: bad input => " << /*date*/ <<std::endl, false);
+	return (true);
+}
 
-	if (/*date pas bonne*/)
-		std::cout<< "Error: bad input => " << /*date*/ <<std::endl;
+float	convert_value(std::multimap::iterator it, std::multimap::iterator ite)
+{
+	//find date en decrementant while pas une date qui passe
+	return (0);
 }
