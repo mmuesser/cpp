@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:53:30 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/02/10 17:41:26 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/02/19 16:59:53 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,17 @@ std::multimap<std::string, float>	make_file_map(char *file_name)
 	return (file_map);
 }
 
-bool	check_date(std::multimap::iterator it)
+bool	check_date(std::multimap<std::string, std::string>::iterator it)
 {
-	
-	// if (/*date pas bonne*/)
-	// 	return (std::cout<< "Error: bad input => " << /*date*/ <<std::endl, false);
+	std::string month = it->first.substr(it->first.find("-") + 1);
+	std::string day = month.substr(month.find("-") + 1);
+	// if ()
+	// 	return (std::cout<< "Error: bad input => " << it->first <<std::endl, false);
 	return (true);
 }
 
-float	convert_value(std::multimap::iterator it, std::multimap::iterator ite)
-{
-	//find date en decrementant while pas une date qui passe
-	return (0);
-}
+// float	convert_value(std::multimap<std::string, std::string>::iterator it, std::multimap<std::string, std::string>::iterator ite)
+// {
+// 	//find date en decrementant while pas une date qui passe
+// 	return (0);
+// }
