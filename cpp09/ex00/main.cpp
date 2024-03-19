@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:53:53 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/03/19 17:59:34 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:28:33 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int ac, char **av)
 			float i = convert_value(it, data_map, date_map);//res value conversion
 			if (it->second < 0)
 				std::cout<< "Error: not a positive number => " << it->second <<std::endl;
-			else if (it->second >= 2147483648)
+			else if (it->second > 1000)
 				std::cout<< "Error: too large number => " << it->second <<std::endl;
 			else
 				std::cout<< it->first << " => " << it->second << " = " << i <<std::endl;
