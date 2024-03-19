@@ -6,11 +6,29 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:53:53 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/02/19 16:58:37 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:59:34 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+
+std::multimap<std::string, std::string> create_date_map()
+{
+	std::multimap<std::string, std::string> date_map;
+	date_map.insert(std::pair<std::string, std::string> ("01", "31"));
+	date_map.insert(std::pair<std::string, std::string> ("02", "28"));
+	date_map.insert(std::pair<std::string, std::string> ("03", "31"));
+	date_map.insert(std::pair<std::string, std::string> ("04", "30"));
+	date_map.insert(std::pair<std::string, std::string> ("05", "31"));
+	date_map.insert(std::pair<std::string, std::string> ("06", "30"));
+	date_map.insert(std::pair<std::string, std::string> ("07", "31"));
+	date_map.insert(std::pair<std::string, std::string> ("08", "31"));
+	date_map.insert(std::pair<std::string, std::string> ("09", "30"));
+	date_map.insert(std::pair<std::string, std::string> ("10", "31"));
+	date_map.insert(std::pair<std::string, std::string> ("11", "30"));
+	date_map.insert(std::pair<std::string, std::string> ("12", "31"));
+	return (date_map);
+}
 
 int	main(int ac, char **av)
 {
@@ -18,36 +36,26 @@ int	main(int ac, char **av)
 		return (std::cout<< "Error: Please enter one argument."<<std::endl, 0);
 	try
 	{
-		date_map.insert(std::pair<std::string, std::string> ("01", "31"));
-		date_map.insert(std::pair<std::string, std::string> ("02", "28"));
-		date_map.insert(std::pair<std::string, std::string> ("03", "31"));
-		date_map.insert(std::pair<std::string, std::string> ("04", "30"));
-		date_map.insert(std::pair<std::string, std::string> ("05", "31"));
-		date_map.insert(std::pair<std::string, std::string> ("06", "30"));
-		date_map.insert(std::pair<std::string, std::string> ("07", "31"));
-		date_map.insert(std::pair<std::string, std::string> ("08", "31"));
-		date_map.insert(std::pair<std::string, std::string> ("09", "30"));
-		date_map.insert(std::pair<std::string, std::string> ("10", "31"));
-		date_map.insert(std::pair<std::string, std::string> ("11", "30"));
-		date_map.insert(std::pair<std::string, std::string> ("12", "31"));
-
+		std::multimap<std::string, std::string> date_map = create_date_map();
 		std::multimap<std::string, float> data_map = make_data_map();
 		std::multimap<std::string, float> file_map = make_file_map(av[1]);
 		std::multimap<std::string, float>::iterator it = file_map.begin();
-		// std::multimap<std::string, float>::iterator ite = data_map.begin();
 		while (it != file_map.end())
 		{
-			// bool b = check_date(it); //check validite date
-			// if (!b)
-			// {
-			// 	it++;
-			// 	continue ;
-			// }
-			// float i = convert_value(it, ite);//res value conversion
-			// if (i)
-			// 	std::cout<< it->first << " => " << it->second << i<<std::endl;
-			// it++;
-			std::cout<< it->first << " | " << it->second <<std::endl;
+			bool b = check_date(it, date_map); //check validite date
+			if (!b)
+			{
+				it++;
+				continue ;
+			}
+			float i = convert_value(it, data_map, date_map);//res value conversion
+			if (it->second < 0)
+				std::cout<< "Error: not a positive number => " << it->second <<std::endl;
+			else if (it->second >= 2147483648)
+				std::cout<< "Error: too large number => " << it->second <<std::endl;
+			else
+				std::cout<< it->first << " => " << it->second << " = " << i <<std::endl;
+			// std::cout<< it->first << " | " << it->second <<std::endl;
 			it++;
 		}
 	}

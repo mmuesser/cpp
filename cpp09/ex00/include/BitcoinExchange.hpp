@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:42:40 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/02/19 17:01:27 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/03/19 16:57:01 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 #include <string>
 #include <sstream>
 #include <exception>
-
-std::multimap<std::string, std::string> date_map;
+#include <stdlib.h>
 
 class	ErrorOpenFile : public std::exception
 {
@@ -33,5 +32,7 @@ class	ErrorOpenFile : public std::exception
 
 std::multimap<std::string, float>	make_data_map(void);
 std::multimap<std::string, float>	make_file_map(char *file_name);
+bool								check_date(std::multimap<std::string, float>::iterator it, std::multimap<std::string, std::string> date_map);
+float								convert_value(std::multimap<std::string, float>::iterator it, std::multimap<std::string, float> data_map, std::multimap<std::string, std::string> date_map);
 
 #endif
