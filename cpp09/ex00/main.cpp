@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:53:53 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/03/19 18:28:33 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:17:19 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,19 @@ int	main(int ac, char **av)
 		std::multimap<std::string, float>::iterator it = file_map.begin();
 		while (it != file_map.end())
 		{
-			bool b = check_date(it, date_map); //check validite date
+			bool b = check_date(it, date_map);
 			if (!b)
 			{
 				it++;
 				continue ;
 			}
-			float i = convert_value(it, data_map, date_map);//res value conversion
+			float i = convert_value(it, data_map, date_map);
 			if (it->second < 0)
 				std::cout<< "Error: not a positive number => " << it->second <<std::endl;
 			else if (it->second > 1000)
 				std::cout<< "Error: too large number => " << it->second <<std::endl;
 			else
 				std::cout<< it->first << " => " << it->second << " = " << i <<std::endl;
-			// std::cout<< it->first << " | " << it->second <<std::endl;
 			it++;
 		}
 	}

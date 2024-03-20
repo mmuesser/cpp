@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:55:34 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/02/07 14:15:45 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/02/19 14:08:02 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,9 @@ int	main()
 	for (MutantStack<int>::iterator mit = myStack.begin(); mit != myStack.end(); mit++)
 		std::cout << *mit << std::endl;
 
-	std::cout << "\nconst iterating on the MutantStack:\n";
-	for (MutantStack<int>::const_iterator mit = myStack.begin(); mit != myStack.end(); mit++)
-		std::cout << *mit << std::endl;
-
 	std::cout << "\nreverse iterating on the MutantStack:\n";
 	for (MutantStack<int>::reverse_iterator mit = myStack.rbegin(); mit != myStack.rend(); mit++)
 		std::cout << *mit << std::endl;
-
-	std::cout << "\nconst reverse iterating on the MutantStack:\n";
-	for (MutantStack<int>::const_reverse_iterator mit = myStack.rbegin(); mit != myStack.rend(); mit++)
-		std::cout << *mit << std::endl;
-
 
 	std::cout << "\npoping out\n";
 	for (int i = 0; i < 43; i++)
@@ -99,18 +90,9 @@ int	main()
 	for (std::list<int>::iterator mit = myList.begin(); mit != myList.end(); mit++)
 		std::cout << *mit << std::endl;
 
-	std::cout << "\nconst iterating on the list:\n";
-	for (std::list<int>::const_iterator mit = myList.begin(); mit != myList.end(); mit++)
-		std::cout << *mit << std::endl;
-
 	std::cout << "\nreverse iterating on the list:\n";
 	for (std::list<int>::reverse_iterator mit = myList.rbegin(); mit != myList.rend(); mit++)
 		std::cout << *mit << std::endl;
-
-	std::cout << "\nconst reverse iterating on the list:\n";
-	for (std::list<int>::const_reverse_iterator mit = myList.rbegin(); mit != myList.rend(); mit++)
-		std::cout << *mit << std::endl;
-
 
 	std::cout << "\npoping out\n";
 	for (int i = 0; i < 43; i++)

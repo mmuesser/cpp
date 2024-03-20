@@ -6,7 +6,7 @@
 /*   By: mmuesser <mmuesser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 15:53:30 by mmuesser          #+#    #+#             */
-/*   Updated: 2024/03/19 18:14:41 by mmuesser         ###   ########.fr       */
+/*   Updated: 2024/03/20 14:38:22 by mmuesser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ bool	check_date(std::multimap<std::string, float>::iterator it, std::multimap<st
 	std::multimap<std::string, std::string>::iterator ite = date_map.begin();
 	while (ite != date_map.end())
 	{
-		if (month == ite->first && (day >= "01" && day <= ite->second))
+		if ((month == ite->first && (day >= "01" && day <= ite->second)) || (atoi(year.c_str()) % 4 == 0 && month == "02" && day == "29"))
 			return (true);
 		ite++;
 	}
@@ -81,7 +81,6 @@ bool	check_date(std::multimap<std::string, float>::iterator it, std::multimap<st
 float	convert_value(std::multimap<std::string, float>::iterator it, std::multimap<std::string, float> data_map, std::multimap<std::string, std::string> date_map)
 {
 	std::multimap<std::string, float>::iterator ite = data_map.begin();
-
 	std::string year = ((std::string) it->first).erase(it->first.find("-"), 6);
 	std::string month = it->first.substr(it->first.find("-") + 1);
 	std::string day = month.substr(month.find("-") + 1);
